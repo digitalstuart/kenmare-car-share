@@ -1,11 +1,20 @@
 import os
-from flask import Flask
+from os import path
+if path.exists("env.py"):
+    import env 
+from flask import Flask, render_template, redirect, request, url_for
+from flask_pymongo import PyMongo
+from bson.objectid import ObjectId
 
-app = Flask (__name__)
+app = Flask(__name__)
+app.config["MONGO_DBNAME"] = 'car_share' 
+app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
+
+mongo = PyMongo(app)
 
 @app.route('/')
 def hello():
-    return 'Hello World'
+    return 'Testing for Kenmare Car Share'
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),

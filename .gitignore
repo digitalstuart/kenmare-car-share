@@ -2,3 +2,4 @@
 .gitpod.dockerfile
 .gitpod.yml
 env.py
+__pycache__
