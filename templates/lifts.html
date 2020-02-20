@@ -1,0 +1,13 @@
+<html>
+    <head>
+    
+    </head>
+    <body>
+        {% for lift in lifts %}
+            {{lift.offer_or_request}}<br>
+            {{lift.locations_start_name}}<br>
+            {{lift.locations_end_name}}<br>
+            {{lift.journey_details}}
+        {% endfor %}
+    </body>
+</html>
