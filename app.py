@@ -19,7 +19,8 @@ def lifts():
 
 @app.route('/add_lift')
 def add_lift():
-    return render_template("add_lift.html")
+    return render_template("add_lift.html",
+    locations=mongo.db.locations.find())
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
