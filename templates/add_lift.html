@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-<form action="" method="POST">
+<form action="{{ url_for('list_lift') }}" method="POST">
 	<div class="form-group">
 		<select name="offer_or_request" id="offer_or_request" class="form-control">
             <option disabled selected>Offer or request?</option>
@@ -21,8 +21,6 @@
         </select>
 		<textarea placeholder="Please enter your journey details" name="journey_details" id="journey_details" cols="30" rows="10"></textarea>
 	</div>
+    <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-
-<button type="submit" class="btn btn-primary">Submit</button>
-
 {% endblock %}
