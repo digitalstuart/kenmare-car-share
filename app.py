@@ -17,6 +17,10 @@ mongo = PyMongo(app)
 def lifts():
     return render_template("lifts.html", lifts=mongo.db.lifts.find())
 
+@app.route('/add_lift')
+def add_lift():
+    return render_template("add_lift.html")
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
         port=int(os.environ.get('PORT')),
