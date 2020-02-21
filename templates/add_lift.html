@@ -21,6 +21,13 @@
         </select>
 		<textarea placeholder="Please enter your journey details" name="journey_details" id="journey_details" cols="30" rows="10"></textarea>
 	</div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+	<div class="input-append date form_datetime" data-date="2013-02-21T15:25:00Z">
+		<i class="fas fa-calendar-alt"></i>
+        <input placeholder= "Select date and time" size="16" type="text" value="" readonly>
+		<span class="add-on"><i class="icon-remove"></i></span>
+		<span class="add-on"><i class="icon-calendar"></i></span>
+	</div>
+	<button type="submit" class="btn btn-primary">Submit</button>
+
 </form>
 {% endblock %}
