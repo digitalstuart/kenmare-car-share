@@ -1,12 +1,15 @@
 {% extends 'base.html' %}
     {% block content %}        
 <div class="card-deck">
-	{% for lift in lifts %}
+	{% for lift in lifts %}    
     <div class="card">
 		<img src="..." class="card-img-top" alt="...">
 		<div class="card-body">
             <h5 class="card-title">{{lift.offer_or_request}} - {{lift.locations_start_name}} to {{lift.locations_end_name}}</h5>
 			<p class="card-text">{{lift.journey_details}}</p>
+            <button>Reply</button>
+            <button>Edit</button>
+            <button>Delete</button>
 		</div>
 		<div class="card-footer">
 			<small class="text-muted">Last updated 3 mins ago</small>
