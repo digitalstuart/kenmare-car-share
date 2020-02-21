@@ -19,8 +19,9 @@ def lifts():
 
 @app.route('/add_lift')
 def add_lift():
-    return render_template("add_lift.html",
-    locations=mongo.db.locations.find())
+    locations=mongo.db.locations.find()
+    whereFrom=mongo.db.locations.find()
+    return render_template("add_lift.html", whereTo = locations, whereFrom = whereFrom)
 
 @app.route('/list_lift', methods=['POST'])
 def list_lift():
