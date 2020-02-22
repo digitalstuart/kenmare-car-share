@@ -13,7 +13,8 @@
             <option value="{{location.locations_name}}">{{location.locations_name}}</option>
             {% endfor %}
         </select>
-		<select name="locations_end_name" id="locations_end_name" class="form-control">
+		
+        <select name="locations_end_name" id="locations_end_name" class="form-control">
             <option value="" disabled selected>Where to?</option>
             {% for location in whereFrom %}
             <option value="{{location.locations_name}}">{{location.locations_name}}</option>
