@@ -1,20 +1,30 @@
 {% extends 'base.html' %}
-    {% block content %}        
+{% block content %}
 <div class="card-deck">
-	{% for lift in lifts %}    
-    <div class="card">
+	{% for lift in lifts %}
+	<div class="card">
 		<img src="..." class="card-img-top" alt="...">
 		<div class="card-body">
-            <h5 class="card-title">{{lift.offer_or_request}} - {{lift.locations_start_name}} to {{lift.locations_end_name}}</h5>
+			<h5 class="card-title">{{lift.offer_or_request}} - {{lift.locations_start_name}} to
+				{{lift.locations_end_name}}</h5>
 			<p class="card-text">{{lift.journey_details}}</p>
-            <button>Reply</button>
-            <button>Edit</button>
-            <button>Delete</button>
+			<button id="reply-button">Reply</button>
+			<button>Edit</button>
+			<button>Delete</button>
 		</div>
+		<div class="card-body-reply"></div>
 		<div class="card-footer">
 			<small class="text-muted">Last updated 3 mins ago</small>
 		</div>
 	</div>
-    {% endfor %}
+	<div id="replyModal" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<textarea placeholder="Please enter your reply here" name="" id="" cols="30" rows="10"></textarea>
+            <button>Submit</button>
+        </div>
+	</div>
+	{% endfor %}
 </div>
+
 {% endblock %}
