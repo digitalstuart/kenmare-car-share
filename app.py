@@ -19,8 +19,8 @@ def lifts():
 
 @app.route('/add_lift')
 def add_lift():
-    locations=mongo.db.locations.find()
-    whereFrom=mongo.db.locations.find()
+    locations = mongo.db.locations.find()
+    whereFrom = mongo.db.locations.find()
     return render_template("add_lift.html", whereTo = locations, whereFrom = whereFrom)
 
 @app.route('/list_lift', methods=['POST'])
@@ -32,9 +32,10 @@ def list_lift():
 @app.route('/reply_to/<lift_id>')
 def reply_to(lift_id):
     the_lift = mongo.db.lifts.find_one({"_id": ObjectId(lift_id)})
-    all_locations = mongo.db.locations.find()
+    locations = mongo.db.locations.find()
+    whereFrom = mongo.db.locations.find()
     return render_template("reply_to.html", lift=the_lift,
-                           locations=all_locations)
+                           whereTo = locations, whereFrom = whereFrom)
 
 @app.route('/add_reply/<lift_id>', methods=["POST"])
 def add_reply(lift_id):
