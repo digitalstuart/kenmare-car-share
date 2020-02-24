@@ -8,7 +8,7 @@
 			<h5 class="card-title">{{lift.offer_or_request}} - {{lift.locations_start_name}} to
 				{{lift.locations_end_name}}</h5>
 			<p class="card-text">{{lift.journey_details}}</p>
-			<button>Reply</button>
+			<button><a href="{{url_for('reply_to', lift_id=lift._id)}}">Reply</a></button>
 			<button>Edit</button>
 			<button>Delete</button>
 		</div>

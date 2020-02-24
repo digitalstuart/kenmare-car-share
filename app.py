@@ -29,10 +29,23 @@ def list_lift():
     lifts.insert_one(request.form.to_dict())
     return redirect(url_for('lifts'))
 
-@app.route('/reply_to', methods=['POST'])
-def reply_to():
+@app.route('/reply_to/<lift_id>')
+def reply_to(lift_id):
+    the_lift = mongo.db.lifts.find_one({"_id": ObjectId(lift_id)})
+    all_locations = mongo.db.locations.find()
+    return render_template("reply_to.html", lift=the_lift,
+                           locations=all_locations)
+
+@app.route('/add_reply/<lift_id>', methods=["POST"])
+def add_reply(lift_id):
     lifts = mongo.db.lifts
-    lifts.reply.insert_one(request.form())
+    lifts.update( {'_id': ObjectId(lift_id)},
+    {   'offer_or_request':request.form.get('offer_or_request'),
+        'locations_start_name':request.form.get('locations_start_name'),
+        'locations_end_name': request.form.get('locations_end_name'),
+        'journey_details': request.form.get('journey_details'),
+        'reply':request.form.get('reply')
+    })
     return redirect(url_for('lifts'))
 
 if __name__ == '__main__':
