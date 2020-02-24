@@ -3,13 +3,13 @@
 <form action="{{ url_for('add_reply', lift_id=lift._id) }}" method="POST">
     <select name="offer_or_request" id="offer_or_request" class="form-control">
             <option disabled selected>Offer or request?</option>
-            {% for t in test %}
-                {% if t.offer_or_request == lift.offer_or_request %}}
+            {% for details in liftDetails %}
+                {% if details.offer_or_request == lift.offer_or_request %}
             <option value="{{lift.offer_or_request}}" selected >{{lift.offer_or_request}}</option>
                 {% endif %}
             {% endfor %}
-        </select>
-		<select name="locations_start_name" id="locations_start_name" class="form-control">
+    </select>
+	<select name="locations_start_name" id="locations_start_name" class="form-control">
             <option value="" disabled selected>Where from?</option>
             {% for location in whereTo %}
                 {% if location.locations_name == lift.locations_start_name %}
@@ -18,9 +18,9 @@
             <option value="{{location.locations_name}}">{{location.locations_name}}</option>
                 {% endif %}
             {% endfor %}
-        </select>
+    </select>
 		
-        <select name="locations_end_name" id="locations_end_name" class="form-control">
+    <select name="locations_end_name" id="locations_end_name" class="form-control">
             <option value="" disabled selected>Where to?</option>
             {% for location in whereFrom %}
                 {% if location.locations_name == lift.locations_end_name %}
@@ -29,13 +29,15 @@
             <option value="{{location.locations_name}}" >{{location.locations_name}}</option>
                 {% endif %}
             {% endfor %}
-            </select>
+    </select>
 
-            
+    <textarea name="journey_details" id="journey_details" cols="30" rows="10"></textarea>    
+        {% for details in liftDetails %}
+                {% if details.journey_details == lift.journey_details %}
+            <textarea value="{{lift.journey_details}}" selected >{{lift.journey_details}}</textarea>
+                {% endif %}
+            {% endfor %}
         
-
-
-
 	<div class="form-group">
 		<textarea placeholder="Please enter your reply here" name="reply" id="reply" cols="30" rows="10"></textarea>
 	</div>
