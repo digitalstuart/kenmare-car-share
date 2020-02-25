@@ -13,8 +13,8 @@
             <option value="{{location.locations_name}}">{{location.locations_name}}</option>
             {% endfor %}
         </select>
-		
-        <select name="locations_end_name" id="locations_end_name" class="form-control">
+
+		<select name="locations_end_name" id="locations_end_name" class="form-control">
             <option value="" disabled selected>Where to?</option>
             {% for location in whereFrom %}
             <option value="{{location.locations_name}}">{{location.locations_name}}</option>
@@ -22,13 +22,12 @@
         </select>
 		<textarea placeholder="Please enter your journey details" name="journey_details" id="journey_details" cols="30" rows="10"></textarea>
 	</div>
-	<div class="input-append date form_datetime" data-date="2013-02-21T15:25:00Z">
-		<i class="fas fa-calendar-alt"></i>
-        <input placeholder= "Select date and time" size="16" type="text" value="" readonly>
-		<span class="add-on"><i class="icon-remove"></i></span>
-		<span class="add-on"><i class="icon-calendar"></i></span>
-	</div>
-	<button type="submit" class="btn btn-primary">Submit</button>
+	<div>
+		<input placeholder="Select date of travel" name="date_of_travel" id="datepicker" width="270" />
+        
+    </div>
+
+		<button type="submit" class="btn btn-primary">Submit</button>
 
 </form>
 {% endblock %}
