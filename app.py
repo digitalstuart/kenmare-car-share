@@ -38,7 +38,7 @@ def reply_to(lift_id):
     return render_template("reply_to.html", lift=the_lift, liftDetails=lifts,
                            whereTo = locations, whereFrom = whereFrom)
 
-@app.route('/add_reply/<lift_id>', methods=["POST"])
+@app.route('/add_reply/<lift_id>', methods=['POST'])
 def add_reply(lift_id):
     lifts = mongo.db.lifts
     lifts.update( {'_id': ObjectId(lift_id)},
@@ -59,7 +59,7 @@ def edit_lift(lift_id):
     return render_template("edit_lift.html", lift=the_lift, liftDetails=lifts,
                            whereTo = locations, whereFrom = whereFrom)
 
-@app.route('/add_edit/<lift_id>', methods=["POST"])
+@app.route('/add_edit/<lift_id>', methods=['POST'])
 def add_edit(lift_id):
     lifts = mongo.db.lifts
     lifts.update( {'_id': ObjectId(lift_id)},
@@ -68,6 +68,11 @@ def add_edit(lift_id):
         'locations_end_name': request.form.get('locations_end_name'),
         'journey_details': request.form.get('journey_details'),
     })
+    return redirect(url_for('lifts'))
+
+@app.route('/delete_lift/<lift_id>')
+def delete_lift(lift_id):
+    mongo.db.lifts.remove({'_id': ObjectId(lift_id)})
     return redirect(url_for('lifts'))
 
 if __name__ == '__main__':
