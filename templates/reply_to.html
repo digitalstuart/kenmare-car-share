@@ -31,14 +31,9 @@
             {% endfor %}
     </select>
 
-    <textarea name="journey_details" id="journey_details" cols="30" rows="10"></textarea>    
-        {% for details in liftDetails %}
-                {% if details.journey_details == lift.journey_details %}
-            <textarea value="{{lift.journey_details}}" selected >{{lift.journey_details}}</textarea>
-                {% endif %}
-            {% endfor %}
-        
-	<div class="form-group">
+    <textarea name="journey_details" id="journey_details" cols="30" rows="10">{{lift.journey_details}}</textarea>    
+             
+	<div>
 		<textarea placeholder="Please enter your reply here" name="reply" id="reply" cols="30" rows="10"></textarea>
 	</div>
 	<button type="submit" class="btn btn-primary">Submit</button>
