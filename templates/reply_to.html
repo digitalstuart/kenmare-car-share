@@ -31,7 +31,7 @@
 
     <textarea name="journey_details" id="journey_details" cols="30" rows="10">{{lift.journey_details}}</textarea>    
     
-    <input name="date_of_travel" id="datepicker" width="270" placeholder="Reselect" />         
+    <input name="date_of_travel" id="datepicker" width="270"/>       
 	<div>
 		<textarea placeholder="Please enter your reply here" name="reply" id="reply" cols="30" rows="10"></textarea>
 	</div>
@@ -39,4 +39,18 @@
 
 </form>
 
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+	</script>
+<script>
+    
+    $( document ).ready(function() {     
+
+        $("#datepicker").val('{{lift.date_of_travel}}');
+
+        });
+        
+</script>  
+
 {% endblock %}
+

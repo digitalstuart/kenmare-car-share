@@ -46,7 +46,8 @@ def add_reply(lift_id):
         'locations_start_name':request.form.get('locations_start_name'),
         'locations_end_name': request.form.get('locations_end_name'),
         'journey_details': request.form.get('journey_details'),
-        'reply':request.form.get('reply')
+        'reply':request.form.get('reply'),
+        'date_of_travel': request.form.get('date_of_travel')
     })
     return redirect(url_for('lifts'))
 
@@ -67,6 +68,7 @@ def add_edit(lift_id):
         'locations_start_name':request.form.get('locations_start_name'),
         'locations_end_name': request.form.get('locations_end_name'),
         'journey_details': request.form.get('journey_details'),
+        'date_of_travel': request.form.get('date_of_travel')
     })
     return redirect(url_for('lifts'))
 
