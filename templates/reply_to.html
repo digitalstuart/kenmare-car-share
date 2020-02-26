@@ -2,12 +2,10 @@
 {% block content %}
 <form action="{{ url_for('add_reply', lift_id=lift._id) }}" method="POST">
     <select name="offer_or_request" id="offer_or_request" class="form-control">
-            <option disabled selected>Offer or request?</option>
-            {% for details in liftDetails %}
-                {% if details.offer_or_request == lift.offer_or_request %}
+            <option disabled selected>Offer or request?</option>            
+                {% if liftDetails.offer_or_request == lift.offer_or_request %}
             <option value="{{lift.offer_or_request}}" selected >{{lift.offer_or_request}}</option>
                 {% endif %}
-            {% endfor %}
     </select>
 	<select name="locations_start_name" id="locations_start_name" class="form-control">
             <option value="" disabled selected>Where from?</option>
@@ -33,12 +31,25 @@
 
     <textarea name="journey_details" id="journey_details" cols="30" rows="10">{{lift.journey_details}}</textarea>    
     
-    <input name="date_of_travel" id="datepicker" width="270" placeholder="Reselect" />         
+    <input name="date_of_travel" id="datepicker" width="270"/>       
 	<div>
 		<textarea placeholder="Please enter your reply here" name="reply" id="reply" cols="30" rows="10"></textarea>
 	</div>
 	<button type="submit" class="btn btn-primary">Submit</button>
 
 </form>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+	</script>
+<script>
+    
+    $( document ).ready(function() {     
+
+        $("#datepicker").val('{{lift.date_of_travel}}');
+
+        });
+        
+</script>  
 
 {% endblock %}
