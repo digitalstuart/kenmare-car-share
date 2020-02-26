@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block content %}
+<form action="{{ url_for('add_reply_again', lift_id=lift._id) }}" method="POST">
+    <select name="offer_or_request" id="offer_or_request" class="form-control">
+            <option disabled selected>Offer or request?</option>            
+                {% if liftDetails.offer_or_request == lift.offer_or_request %}
+            <option value="{{lift.offer_or_request}}" selected >{{lift.offer_or_request}}</option>
+                {% endif %}
+    </select>
+	<select name="locations_start_name" id="locations_start_name" class="form-control">
+            <option value="" disabled selected>Where from?</option>
+            {% for location in whereTo %}
+                {% if location.locations_name == lift.locations_start_name %}
+            <option value="{{location.locations_name}}" selected >{{location.locations_name}}</option>
+                {% else %}
+            <option value="{{location.locations_name}}">{{location.locations_name}}</option>
+                {% endif %}
+            {% endfor %}
+    </select>
+		
+    <select name="locations_end_name" id="locations_end_name" class="form-control">
+            <option value="" disabled selected>Where to?</option>
+            {% for location in whereFrom %}
+                {% if location.locations_name == lift.locations_end_name %}
+            <option value="{{location.locations_name}}" selected >{{location.locations_name}}</option>
+                {% else %}
+            <option value="{{location.locations_name}}" >{{location.locations_name}}</option>
+                {% endif %}
+            {% endfor %}
+    </select>
+
+    <textarea name="journey_details" id="journey_details" cols="30" rows="10">{{lift.journey_details}}</textarea>    
+    
+    <input name="date_of_travel" id="datepicker" width="270"/>       
+	<div>
+		<textarea name="reply" id="reply" cols="30" rows="10"></textarea>
+	</div>
+    <div>
+		<textarea placeholder="Please enter your reply here" name="reply_2" id="reply_2" cols="30" rows="10"></textarea>
+	</div>
+	<button type="submit" class="btn btn-primary">Submit</button>
+
+</form>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+	</script>
+<script>
+    
+    $( document ).ready(function() {     
+
+        $("#datepicker").val('{{lift.date_of_travel}}');
+
+        $("#reply").val('{{lift.reply}}');
+
+        });
+        
+</script>  
+
+{% endblock %}
+
