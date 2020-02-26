@@ -32,7 +32,7 @@ def list_lift():
 @app.route('/reply_to/<lift_id>')
 def reply_to(lift_id):
     the_lift = mongo.db.lifts.find_one({"_id": ObjectId(lift_id)})
-    lifts = mongo.db.lifts.find()
+    lifts = mongo.db.lifts.find_one({"_id": ObjectId(lift_id)})
     locations = mongo.db.locations.find()
     whereFrom = mongo.db.locations.find()
     return render_template("reply_to.html", lift=the_lift, liftDetails=lifts,
@@ -53,7 +53,7 @@ def add_reply(lift_id):
 @app.route('/edit_lift/<lift_id>')
 def edit_lift(lift_id):
     the_lift = mongo.db.lifts.find_one({"_id": ObjectId(lift_id)})
-    lifts = mongo.db.lifts.find()
+    lifts = mongo.db.lifts.find_one({"_id": ObjectId(lift_id)})
     locations = mongo.db.locations.find()
     whereFrom = mongo.db.locations.find()
     return render_template("edit_lift.html", lift=the_lift, liftDetails=lifts,
