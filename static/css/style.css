@@ -1,3 +1,5 @@
 body {
-    background-color: red;
+    background: url("../images/road.jpg") no-repeat center center scroll;
+    background-size: cover;
+    height: 100vh;
 }
