@@ -4,6 +4,10 @@ body {
     height: 100vh;
 }
 
+.navbar-toggler, .collapsed {
+    border: 0;
+}
+
 .card-deck {
     margin: 12px;
 }
@@ -26,11 +30,11 @@ body {
 
 .fa-car-side {
     padding-left: 20px;
-    padding-top: 15px;
+    padding-top: 20px;
 }
 
 .card-body {
-    padding-top: 10px;
+    padding-top: 15px;
     padding-bottom: 5px;
 }
 
