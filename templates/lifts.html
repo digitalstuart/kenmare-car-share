@@ -9,13 +9,13 @@
 				<i class="fas fa-car-alt"></i>
 				<div class="card-body">
 					<div class="card-title">
-						<span>{{lift.offer_or_request}} >   </span>
-						<span>When: {{lift.date_of_travel}}</span>
+						<span>{{lift.offer_or_request}}</span>
+						<span><strong>When: </strong>{{lift.date_of_travel}}</span>
 					</div>
 					<div class="card-title">
-						<span>From: {{lift.locations_start_name}}  >   </span>
-						<span>To: {{lift.locations_end_name}}</span>
+						<span><strong>From: </strong>{{lift.locations_start_name}}  ><br><strong>To: </strong>{{lift.locations_end_name}}</span>
 					</div>
+                    <div class="details"><strong>Journey details:</strong></div>
 					<div class="card-text">{{lift.journey_details}}</div>
 					<button><a href="{{url_for('reply_to', lift_id=lift._id)}}">Reply</a></button>
 					<button><a href="{{url_for('edit_lift', lift_id=lift._id)}}">Edit</a></button>
@@ -26,7 +26,7 @@
 				</div>
 				<div class="card-body reply">{{lift.reply_2}}
 				</div>				
-			</div>
+			</div>             
 		</div>
 	</div>
 	{% endfor %}

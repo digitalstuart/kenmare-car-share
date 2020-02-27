@@ -10,12 +10,18 @@ body {
 
 .card-text {
     margin-bottom: 12px;
+    border: 1px solid black;
 }
 
 .nav-text, .fa-car-alt {
     color: black;
     padding-top: 10px;
     margin-right: 5px;
+}
+
+.fa-car-alt {
+    padding-left: 20px;
+    margin-bottom: 5px;
 }
 
 .card-body {
@@ -25,6 +31,29 @@ body {
 
 .lift-details {
     margin-right: 10px;
+}
+
+.form-group {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.form-control{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+textarea {    
+    width: 100%;
+    padding-bottom: 0;
+}
+
+button {
+    margin-top: 15px;
+}
+
+.details {
+    margin-bottom: 15px;
 }
 
 /* MEDIA QUERIES */
