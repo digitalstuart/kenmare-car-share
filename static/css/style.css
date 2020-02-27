@@ -1,5 +1,5 @@
 body {
-    background: url("../images/road.jpg") no-repeat center center scroll;
+    background: url("../images/road.jpg") repeat center center scroll;
     background-size: cover;
     height: 100vh;
 }
@@ -8,8 +8,29 @@ body {
     margin: 12px;
 }
 
+.card-text {
+    margin-bottom: 12px;
+}
+
 .nav-text, .fa-car-alt {
     color: black;
     padding-top: 10px;
     margin-right: 5px;
+}
+
+.card-body {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.lift-details {
+    margin-right: 10px;
+}
+
+/* MEDIA QUERIES */
+
+@media only screen and (max-width: 576px) {
+
+.card-deck, .card-title {
+    font-size: 15px
 }
