@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+<h1 class="text-center">ADD A LIFT</h1>
 <form action="{{ url_for('list_lift') }}" method="POST">
 	<div class="form-group">
 		<select name="offer_or_request" id="offer_or_request" class="form-control">
