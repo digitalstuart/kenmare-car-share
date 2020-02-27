@@ -51,29 +51,6 @@ def add_reply(lift_id):
     })
     return redirect(url_for('lifts'))
 
-@app.route('/reply_again/<lift_id>')
-def reply_again(lift_id):
-    the_lift = mongo.db.lifts.find_one({"_id": ObjectId(lift_id)})
-    lifts = mongo.db.lifts.find_one({"_id": ObjectId(lift_id)})
-    locations = mongo.db.locations.find()
-    whereFrom = mongo.db.locations.find()
-    return render_template("reply_again.html", lift=the_lift, liftDetails=lifts,
-                           whereTo = locations, whereFrom = whereFrom)
-
-@app.route('/add_reply_again/<lift_id>', methods=['POST'])
-def add_reply_again(lift_id):
-    lifts = mongo.db.lifts
-    lifts.update( {'_id': ObjectId(lift_id)},
-    {   'offer_or_request':request.form.get('offer_or_request'),
-        'locations_start_name':request.form.get('locations_start_name'),
-        'locations_end_name': request.form.get('locations_end_name'),
-        'journey_details': request.form.get('journey_details'),
-        'reply':request.form.get('reply'),
-        'reply_2':request.form.get('reply_2'),
-        'date_of_travel': request.form.get('date_of_travel')
-    })
-    return redirect(url_for('lifts'))
-
 @app.route('/edit_lift/<lift_id>')
 def edit_lift(lift_id):
     the_lift = mongo.db.lifts.find_one({"_id": ObjectId(lift_id)})
