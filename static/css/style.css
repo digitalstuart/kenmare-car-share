@@ -58,14 +58,19 @@ body {
 textarea {    
     width: 100%;
     padding-bottom: 0;
+    resize: none;
 }
 
 .btn {
-    margin-top: 15px;
+    margin-top: 13px;
 }
 
 .details {
     margin-bottom: 10px;
+}
+
+#reply {
+    margin-top: 14px;
 }
 
 /* MEDIA QUERIES */
