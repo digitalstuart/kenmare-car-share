@@ -1,5 +1,5 @@
 body {
-    background: url("../images/kenmare.jpg") repeat center center scroll;
+    background: url("../images/kenmare.jpg") no-repeat center center fixed;
     background-size: cover;
     height: 100vh;
 }
