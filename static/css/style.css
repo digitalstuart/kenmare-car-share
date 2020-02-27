@@ -24,8 +24,13 @@ body {
     margin-bottom: 5px;
 }
 
+.fa-car-side {
+    padding-left: 20px;
+    padding-top: 15px;
+}
+
 .card-body {
-    padding-top: 5px;
+    padding-top: 10px;
     padding-bottom: 5px;
 }
 
@@ -48,7 +53,7 @@ textarea {
     padding-bottom: 0;
 }
 
-button {
+.btn {
     margin-top: 15px;
 }
 
@@ -62,4 +67,14 @@ button {
 
 .card-deck, .card-title {
     font-size: 15px
+}
+
+}
+
+@media only screen and (max-width: 768px) {
+
+.fa-car-alt {
+    padding-left: 0px;
+}
+
 }
