@@ -4,7 +4,11 @@ body {
     height: 100vh;
 }
 
-.navbar-toggler, .collapsed {
+.text-center {
+    margin-top: 20px;
+}
+
+.navbar-toggler {
     border: 0;
 }
 
@@ -13,8 +17,7 @@ body {
 }
 
 .card-text {
-    margin-bottom: 12px;
-    border: 1px solid black;
+    margin-bottom: 17px;    
 }
 
 .nav-text, .fa-car-alt {
@@ -62,7 +65,7 @@ textarea {
 }
 
 .details {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 /* MEDIA QUERIES */
