@@ -7,17 +7,16 @@
 			<div class="card">
 				<i class="fas fa-car-alt"></i>
 				<div class="card-body">
-					<h5 class="card-title">{{lift.offer_or_request}}<br>{{lift.locations_start_name}}<br>{{lift.locations_end_name}}<br>{{lift.date_of_travel}}</h5>
-					<p class="card-text collapsible">Journey details</p>
-                    <div class="content">{{lift.journey_details}}</div>
+					<h5 class="card-title">{{lift.offer_or_request}}<br>From: {{lift.locations_start_name}}<br>To: {{lift.locations_end_name}}<br>When: {{lift.date_of_travel}}</h5>
+					<div class="card-text">{{lift.journey_details}}</div>
 					<button><a href="{{url_for('reply_to', lift_id=lift._id)}}">Reply</a></button>
 					<button><a href="{{url_for('edit_lift', lift_id=lift._id)}}">Edit</a></button>
 					<button><a href="{{url_for('delete_lift', lift_id=lift._id)}}">Delete</a></button>
 				</div>
-				<div class="card-body-reply">{{lift.reply}}
+				<div class="card-body reply">{{lift.reply}}
 					<button><a href="{{url_for('reply_again', lift_id=lift._id)}}">Reply</a></button>
 				</div>
-				<div class="card-body-reply">{{lift.reply_2}}
+				<div class="card-body reply">{{lift.reply_2}}
 				</div>
 				<div class="card-footer">
 					<small class="text-muted">Last updated 3 mins ago</small>
