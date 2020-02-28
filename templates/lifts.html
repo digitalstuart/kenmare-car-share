@@ -4,7 +4,7 @@
 <div class="row">
 	{% for comment in comments %}
     {% for lift in lifts %}
-	<div class="col-lg-4">
+	<div class="col-lg-3">
 		<div class="card-deck">
 			<div class="card">
                 {% if lift.offer_or_request == "Offer a lift" %}
@@ -28,9 +28,9 @@
 				<div class="card-body reply">{{comment.text}}</div>						
 			</div>             
 		</div>
-	</div>
-    <button id="myBtn" title="Go to top">Back to top<br></button>
+	</div>   
 	{% endfor %}
     {% endfor %}
+     <button id="myBtn" title="Go to top">Back to top<br></button>
 </div>
 {% endblock %}
