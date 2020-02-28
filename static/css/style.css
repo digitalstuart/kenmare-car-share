@@ -11,6 +11,14 @@ h1 {
     font-family: 'Quicksand:700', sans-serif;
 }
 
+.card {
+    border-radius: 10px; 
+}
+
+#offer_or_request, #locations_start_name, #locations_end_name, #journey_details, #datepicker, #submit-button, #reply, #reply-button, #edit-button, #delete-button {
+    border-radius: 10px; 
+}
+
 .offer-or-request {
     font-family: 'Quicksand', sans-serif;
 }
