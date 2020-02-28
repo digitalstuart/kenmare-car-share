@@ -15,7 +15,7 @@ mongo = PyMongo(app)
 @app.route('/')
 @app.route('/lifts')
 def lifts():
-    return render_template("lifts.html", lifts=mongo.db.lifts.find())
+    return render_template("lifts.html", lifts=mongo.db.lifts.find(), comments=mongo.db.comments.find())
 
 @app.route('/add_lift')
 def add_lift():
@@ -33,10 +33,11 @@ def list_lift():
 def reply_to(lift_id):
     the_lift = mongo.db.lifts.find_one({"_id": ObjectId(lift_id)})
     lifts = mongo.db.lifts.find_one({"_id": ObjectId(lift_id)})
+    comments = mongo.db.comments.find({"discussion_id": lifts["_id"]})
     locations = mongo.db.locations.find()
     whereFrom = mongo.db.locations.find()
     return render_template("reply_to.html", lift=the_lift, liftDetails=lifts,
-                           whereTo = locations, whereFrom = whereFrom)
+                           whereTo = locations, whereFrom = whereFrom, comments=comments)
 
 @app.route('/add_reply/<lift_id>', methods=['POST'])
 def add_reply(lift_id):
@@ -46,10 +47,8 @@ def add_reply(lift_id):
         'locations_start_name':request.form.get('locations_start_name'),
         'locations_end_name': request.form.get('locations_end_name'),
         'journey_details': request.form.get('journey_details'),
-        'reply':request.form.get('reply'),
         'date_of_travel': request.form.get('date_of_travel')
-    })
-    return redirect(url_for('lifts'))
+    })    
 
 @app.route('/edit_lift/<lift_id>')
 def edit_lift(lift_id):
