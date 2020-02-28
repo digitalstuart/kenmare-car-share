@@ -11,6 +11,10 @@ h1 {
     font-family: 'Quicksand:700', sans-serif;
 }
 
+.page-headings {
+    margin-bottom: 20px;
+}
+
 .card {
     border-radius: 10px; 
 }
@@ -90,7 +94,7 @@ textarea {
     margin-right: 10px;
 }
 
-.form-group {
+.form-group {    
     margin-bottom: 0;
     padding-bottom: 0;
 }
