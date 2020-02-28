@@ -57,6 +57,10 @@ textarea {
     margin-top: 20px;
 }
 
+.navbar {
+    padding-right: 4px;
+}
+
 .navbar-toggler {
     border: 0;
 }
