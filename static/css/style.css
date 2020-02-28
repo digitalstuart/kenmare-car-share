@@ -32,6 +32,23 @@ a:hover {
     color: slategrey;
 }
 
+#submit-button {
+    color: #495057;
+    background-color: white;
+    padding: 5px 12px 5px 12px;
+    border: none;
+}
+
+textarea {
+    color: #495057;
+    outline: none;
+    padding-left: 10px;
+}
+
+#submit-button:hover {
+    color: black;
+}
+
 .text-center {
     margin-top: 20px;
 }
@@ -79,7 +96,7 @@ a:hover {
 }
 
 .form-control{
-    margin-top: 10px;
+    margin-top: 5px;
     margin-bottom: 10px;
 }
 
@@ -90,7 +107,7 @@ textarea {
 }
 
 .btn {
-    margin-top: 13px;
+    margin-top: 11px;
 }
 
 .details {
