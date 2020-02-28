@@ -48,7 +48,8 @@ def add_reply(lift_id):
         'locations_end_name': request.form.get('locations_end_name'),
         'journey_details': request.form.get('journey_details'),
         'date_of_travel': request.form.get('date_of_travel')
-    })    
+    })   
+    return redirect(url_for('lifts')) 
 
 @app.route('/edit_lift/<lift_id>')
 def edit_lift(lift_id):
