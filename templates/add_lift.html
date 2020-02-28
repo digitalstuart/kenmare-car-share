@@ -3,28 +3,28 @@
 <h1 class="text-center">ADD A LIFT</h1>
 <form action="{{ url_for('list_lift') }}" method="POST">
 	<div class="form-group">
-		<select name="offer_or_request" id="offer_or_request" class="form-control">
-            <option disabled selected>Offer or request?</option>
-            <option>Offer a lift</option>
-            <option>Request a lift</option>
+		<select name="offer_or_request" id="offer_or_request" class="form-control" required>
+            <option value="" disabled selected>Offer or request?</option>
+            <option value="first">Offer a lift</option>
+            <option value="second">Request a lift</option>
         </select>
-		<select name="locations_start_name" id="locations_start_name" class="form-control">
+		<select name="locations_start_name" id="locations_start_name" class="form-control" required>
             <option value="" disabled selected>Where from?</option>
             {% for location in whereTo %}
             <option value="{{location.locations_name}}">{{location.locations_name}}</option>
             {% endfor %}
         </select>
 
-		<select name="locations_end_name" id="locations_end_name" class="form-control">
+		<select name="locations_end_name" id="locations_end_name" class="form-control" required>
             <option value="" disabled selected>Where to?</option>
             {% for location in whereFrom %}
             <option value="{{location.locations_name}}">{{location.locations_name}}</option>
             {% endfor %}
         </select>
-		<textarea maxlength="150" placeholder="Please enter journey details (maximum 150 characters)" name="journey_details" id="journey_details" cols="30" rows="5"></textarea>
+		<textarea maxlength="150" placeholder="Please enter journey details (maximum 150 characters)" name="journey_details" id="journey_details" cols="30" rows="5" required></textarea>
 	</div>
 	<div>
-		<input placeholder="Select date of journey" name="date_of_travel" id="datepicker" width="270" />
+		<input placeholder="Select date of journey" name="date_of_travel" id="datepicker" width="270" required />
         
     </div>
 

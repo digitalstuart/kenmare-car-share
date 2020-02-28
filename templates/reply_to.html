@@ -6,16 +6,16 @@
     <select name="offer_or_request" id="offer_or_request" class="form-control">
             <option disabled selected>Offer or request?</option>            
                 {% if liftDetails.offer_or_request == lift.offer_or_request %}
-            <option value="{{lift.offer_or_request}}" selected >{{lift.offer_or_request}}</option>
+            <option disabled value="{{lift.offer_or_request}}" selected >{{lift.offer_or_request}}</option>
                 {% endif %}
     </select>
 	<select name="locations_start_name" id="locations_start_name" class="form-control">
             <option value="" disabled selected>Where from?</option>
             {% for location in whereTo %}
                 {% if location.locations_name == lift.locations_start_name %}
-            <option value="{{location.locations_name}}" selected >{{location.locations_name}}</option>
+            <option disabled value="{{location.locations_name}}" selected >{{location.locations_name}}</option>
                 {% else %}
-            <option value="{{location.locations_name}}">{{location.locations_name}}</option>
+            <option disabled value="{{location.locations_name}}">{{location.locations_name}}</option>
                 {% endif %}
             {% endfor %}
     </select>
@@ -24,18 +24,18 @@
             <option value="" disabled selected>Where to?</option>
             {% for location in whereFrom %}
                 {% if location.locations_name == lift.locations_end_name %}
-            <option value="{{location.locations_name}}" selected >{{location.locations_name}}</option>
+            <option disabled value="{{location.locations_name}}" selected >{{location.locations_name}}</option>
                 {% else %}
-            <option value="{{location.locations_name}}" >{{location.locations_name}}</option>
+            <option disabled value="{{location.locations_name}}" >{{location.locations_name}}</option>
                 {% endif %}
             {% endfor %}
     </select>
 
-    <textarea name="journey_details" id="journey_details" cols="30" rows="5">{{lift.journey_details}}</textarea>    
+    <textarea disabled name="journey_details" id="journey_details" cols="30" rows="5">{{lift.journey_details}}</textarea>    
     
-    <input name="date_of_travel" id="datepicker" width="270"/>       
+    <input disabled name="date_of_travel" id="datepicker" width="270"/>       
 	<div>
-		<textarea maxlength="150" placeholder="Please enter your reply here (maximum 150 characters)" name="reply" id="reply" cols="30" rows="5"></textarea>
+		<textarea maxlength="150" placeholder="Please enter your reply here (maximum 150 characters)" name="reply" id="reply" cols="30" rows="5" required></textarea>
 	</div>
 	<button type="submit" id="submit-button" class="btn btn-primary">Submit >></button>
 
