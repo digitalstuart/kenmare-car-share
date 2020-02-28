@@ -2,14 +2,15 @@
 {% block content %}
 <h1 class="text-center">LATEST LIFTS</h1>
 <div class="row">
-	{% for lift in lifts %}
+	{% for comment in comments %}
+    {% for lift in lifts %}
 	<div class="col-lg-4">
 		<div class="card-deck">
 			<div class="card">
                 {% if lift.offer_or_request == "Offer a lift" %}
-				<i class="fas fa-car-side"><span>   {{lift.offer_or_request}}</span></i>                
+				<i class="fas fa-car-side"><span class="offer-or-request">   {{lift.offer_or_request}}</span></i>                
                 {% else %}
-                <i class="fas fa-thumbs-up"><span>   {{lift.offer_or_request}}</span></i>     
+                <i class="fas fa-thumbs-up"><span class="offer-or-request">   {{lift.offer_or_request}}</span></i>     
                 {% endif %}
 				<div class="card-body">
 					<div class="card-title">						
@@ -23,12 +24,13 @@
 					<button><a href="{{url_for('reply_to', lift_id=lift._id)}}">Reply</a></button>
 					<button><a href="{{url_for('edit_lift', lift_id=lift._id)}}">Edit</a></button>
 					<button><a href="{{url_for('delete_lift', lift_id=lift._id)}}">Delete</a></button>
-				</div>
-				<div class="card-body reply">{{lift.reply}}</div>
-						
+				</div>                
+				<div class="card-body reply">{{comment.text}}</div>						
 			</div>             
 		</div>
 	</div>
+    <button id="myBtn" title="Go to top">Back to top<br></button>
 	{% endfor %}
+    {% endfor %}
 </div>
 {% endblock %}
