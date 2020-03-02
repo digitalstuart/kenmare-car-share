@@ -18,7 +18,7 @@ mongo = PyMongo(app)
 def lifts():
     lifts = mongo.db.lifts.find()
     comments = mongo.db.comments.find()
-    return render_template("lifts.html", test=zip(lifts, comments))
+    return render_template("lifts.html", tests=zip(lifts,comments))
 
 @app.route('/add_lift')
 def add_lift():
