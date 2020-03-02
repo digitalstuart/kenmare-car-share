@@ -1,7 +1,7 @@
 {% extends 'base_second.html' %}
 {% block content %}
 <h1 class="text-center page-headings">REPLY TO A LIFT</h1>
-<h1>{% for comment in comments %} {{comment.text}} {% endfor %}</h1>
+<h1>{% for comment in comments %} {{comment.text}} {{comment.posted}} {% endfor %}</h1>
 <form action="{{ url_for('add_reply', lift_id=lift._id) }}" method="POST">
     <select name="offer_or_request" id="offer_or_request" class="form-control">
             <option disabled selected>Offer or request?</option>            
