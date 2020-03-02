@@ -17,3 +17,15 @@ document.getElementById("myBtn").addEventListener ("click", function () {
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 });
+
+/*
+document.getElementById("show-hide").addEventListener("click", function() {
+    let test = document.getElementById("reply");
+        if (test.style.display === "none") {
+            test.style.display = "block";
+        }
+        else {
+            test.style.display = "none";
+        }
+})
+*/
