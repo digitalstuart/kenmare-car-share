@@ -15,10 +15,8 @@ mongo = PyMongo(app)
 
 @app.route('/')
 @app.route('/lifts')
-def lifts():
-    lifts = mongo.db.lifts.find()
-    comments = mongo.db.comments.find()
-    return render_template("lifts.html", tests=zip(lifts,comments))
+def lifts():    
+    return render_template("lifts.html", lifts = mongo.db.lifts.find(), text = mongo.db.lifts.text.find(), posted = mongo.db.lifts.posted.find())
 
 @app.route('/add_lift')
 def add_lift():
@@ -52,14 +50,17 @@ def add_reply(lift_id):
     #     'journey_details': request.form.get('journey_details'),
     #     'date_of_travel': request.form.get('date_of_travel')        
     # })
-    liftid = mongo.db.lifts.find_one({"_id": ObjectId(lift_id)})["_id"]
-    comments = mongo.db.comments
-    submit = {
-        'posted': datetime.now().strftime("%d/%m/%y"),
-        'text': request.form.get('text'),
-        'discussion_id': liftid
-    }
-    comments.insert_one(submit)
+    # liftid = mongo.db.lifts.find_one({"_id": ObjectId(lift_id)})["_id"]
+    # comments = mongo.db.comments
+    # submit = {
+    #    'posted': datetime.now().strftime("%d/%m/%y"),
+    #    'text': request.form.get('text'),
+    #    'discussion_id': liftid
+    # }
+    # comments.insert_one(submit)
+    mongo.db.lifts.find_one_and_update({"_id": ObjectId(lift_id)}, 
+    {   "$push": {"text": request.form.get('text'), "posted": datetime.now().strftime("%d/%m/%y")}
+    }) 
     return redirect(url_for('lifts')) 
 
 @app.route('/edit_lift/<lift_id>')
