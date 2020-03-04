@@ -16,7 +16,7 @@ mongo = PyMongo(app)
 @app.route('/')
 @app.route('/lifts')
 def lifts():   
-    return render_template("lifts.html", lifts = mongo.db.lifts.find())
+    return render_template("lifts.html", lifts = mongo.db.lifts.find().skip(mongo.db.lifts.count() - 6))
 
 @app.route('/add_lift')
 def add_lift():
