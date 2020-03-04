@@ -20,7 +20,7 @@ document.getElementById("myBtn").addEventListener ("click", function () {
 
 /*
 document.getElementById("show-hide").addEventListener("click", function() {
-    let test = document.getElementById("reply");
+    let test = document.getElementsByClassName("reply");
         if (test.style.display === "none") {
             test.style.display = "block";
         }
