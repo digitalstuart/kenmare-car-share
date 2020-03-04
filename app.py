@@ -61,7 +61,7 @@ def add_reply(lift_id):
     mongo.db.lifts.find_one_and_update({"_id": ObjectId(lift_id)}, 
     {'$push': {"comments": {
                 "text": request.form.get("text"),
-                "posted": datetime.now().strftime("%d/%m/%y")
+                "posted": datetime.now().strftime("%H:%M/%d/%m/%y")
     }}})
     return redirect(url_for('lifts')) 
 
