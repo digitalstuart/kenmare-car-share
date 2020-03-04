@@ -94,12 +94,16 @@ textarea {
 }
 
 .card-body {
-    padding-top: 15px;
+    padding-top: 10px;
     padding-bottom: 15px;
 }
 
 .lift-details {
     margin-right: 10px;
+}
+
+.replies {
+    padding-left: 20px;
 }
 
 .form-group {    

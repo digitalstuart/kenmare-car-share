@@ -24,8 +24,9 @@
 					<button id="edit-button"><a href="{{url_for('edit_lift', lift_id=lift._id)}}">Edit</a></button>
 					<button id="delete-button" ><a href="{{url_for('delete_lift', lift_id=lift._id)}}">Delete</a></button>
 				</div>
-                {% for comment in lift.comments %} 
-                <div class="card-body reply">{{comment.text}} {{comment.posted}}</div>              
+                <div class="replies"><strong>Replies:</strong></div> 
+                {% for comment in lift.comments %}
+                <div class="card-body reply">{{comment.text}} {{comment.posted}} <hr></div>    
                 {% endfor %}
 			</div>
 		</div>
