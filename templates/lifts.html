@@ -26,7 +26,7 @@
 				</div>
                 <div class="replies"><strong>Replies:</strong></div> 
                 {% for comment in lift.comments %}
-                <div class="card-body reply">{{comment.text}} {{comment.posted}} <hr></div>    
+                <div class="card-body reply">{{comment.posted}}<br>{{comment.text}}<hr></div>    
                 {% endfor %}
 			</div>
 		</div>
