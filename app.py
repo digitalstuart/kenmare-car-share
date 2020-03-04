@@ -34,11 +34,10 @@ def list_lift():
 def reply_to(lift_id):
     the_lift = mongo.db.lifts.find_one({"_id": ObjectId(lift_id)})
     lifts = mongo.db.lifts.find_one({"_id": ObjectId(lift_id)})
-    comments = mongo.db.comments.find({"discussion_id": lifts["_id"]})
     locations = mongo.db.locations.find()
     whereFrom = mongo.db.locations.find()
     return render_template("reply_to.html", lift=the_lift, liftDetails=lifts,
-                           whereTo = locations, whereFrom = whereFrom, comments=comments)
+                           whereTo = locations, whereFrom = whereFrom)
 
 @app.route('/add_reply/<lift_id>', methods=['POST'])
 def add_reply(lift_id):
