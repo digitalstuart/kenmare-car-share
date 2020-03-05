@@ -16,7 +16,7 @@ mongo = PyMongo(app)
 @app.route('/')
 @app.route('/lifts')
 def lifts(): 
-    lifts = mongo.db.lifts.find().sort('timestamp', -1)
+    lifts = mongo.db.lifts.find().sort('_id', -1).limit(5)
     return render_template("lifts.html", lifts = lifts)
 
 @app.route('/add_lift')
