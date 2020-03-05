@@ -1,4 +1,4 @@
-{% extends 'base_second.html' %}
+{% extends 'second_base.html' %}
 {% block content %}
 <h1 class="text-center page-headings">REPLY TO A LIFT</h1>
 <form action="{{ url_for('add_reply', lift_id=lift._id) }}" method="POST">
