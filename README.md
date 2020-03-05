@@ -46,6 +46,11 @@ I used Balsamiq to create some wireframes for the project.
 
 ### Features left to implement
 
+* The site could have a mapping element, whereby documents in the MongoDB locations collection are given latitude and longitude values, allowing chosen locations for a lift to be pinned on a map using the Google Maps API.
+* A 'browse lifts' page could contain all active lift postings, with search filters to narrow the results down by location or date of travel, for example.
+* An authentication system for registered users should be set up, so that: 1) only the person who added a lift can edit or delete it, and: 2) for added security and peace of mind for users.
+* This system could also be extended to send notifications to registered users when a reply is left on their post.
+
 ## Technologies
 
 This project uses HTML, CSS, JavaScript, jQuery, Python/Flask and MongoDB.
