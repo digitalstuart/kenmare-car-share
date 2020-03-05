@@ -24,10 +24,19 @@
 					<button id="edit-button"><a href="{{url_for('edit_lift', lift_id=lift._id)}}">Edit</a></button>
 					<button id="delete-button" ><a href="{{url_for('delete_lift', lift_id=lift._id)}}">Delete</a></button>
 				</div>
-                <div class="replies"><button onclick="replyFunction({{ loop.index }})"><strong>Replies:</strong></button></div> 
-                {% for comment in lift.comments %}
-                <div class="card-body-replies" id="replies-section-{{ loop.index }}">{{comment.posted}}<br>{{comment.text}}<hr></div>    
-                {% endfor %}
+                <div class="replies">
+                    <button onclick="replyFunction({{ loop.index }})">
+                        <strong>Replies:</strong>
+                    </button>
+                </div>
+                <div class="card-body-replies" id="replies-for-{{ loop.index }}">
+                    {% for comment in lift.comments %}
+                        <div>
+                            {{comment.posted}}<br>{{comment.text}}
+                            <hr>
+                        </div>    
+                    {% endfor %}
+                </div>
 			</div>
 		</div>
 	</div>

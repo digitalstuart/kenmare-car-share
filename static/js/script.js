@@ -30,15 +30,12 @@ document.getElementById("show-hide").addEventListener("click", function() {
 })
 */
 
-function replyFunction() {
-
-document.getElementsByClassName('card-body-replies').style.display = "none";
-
-document.getElementById('replies-section')
+function replyFunction(id) {
+  let replySection = document.getElementById('replies-for-' + id);
   
-  if(test.style.display == 'none'){
-      test.style.display = 'block'
-  }else{
-     test.style.display = 'none'
+  if (!replySection.style.display || replySection.style.display == 'none') {
+    replySection.style.display = 'block';
+  } else {
+    replySection.style.display = 'none';
   }
-    }
+}
