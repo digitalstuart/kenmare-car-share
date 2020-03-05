@@ -35,10 +35,11 @@ The whole process should be very simple and straightforward - in essence, it cou
 
 ![alt text](https://i.imgur.com/GGjyC6j.jpg "Kingdom Come screenshot")
 
-I used Balsamiq to create some wireframes for the project. 
+I used Balsamiq to create some wireframes for the project. They illustrate that the project idea was clear from the outset and the development and final product have been consistent with the concept. 
+The prospect of a 'Browse lifts' page has been moved back to 'Features left to implement'.
 
-![alt text](https://i.imgur.com/6Ro7Wcy.jpg "Kingdom Come wireframe")
-![alt text](https://i.imgur.com/SEltWEW.jpg "Kingdom Come wireframe")
+![alt text](https://i.imgur.com/OYisCQ2.jpg "Kenmare Car Share wireframe")
+![alt text](https://i.imgur.com/3vowRyk.jpg "Kenmare Car Share wireframe")
 
 ## Features
 
@@ -66,6 +67,7 @@ It utilises the Bootstrap framework and library, plus a [datepicker from GIJGO](
 
 * The datepicker was sourced from https://gijgo.com/datepicker/example/bootstrap-4.
 * For scrolling to the top with a 'back to top' button, I referred to https://www.w3schools.com/howto/howto_js_scroll_to_top.asp.
+* https://github.com/conoroshea1996/Cook-Book.
 
 ### Acknowledgements
 
