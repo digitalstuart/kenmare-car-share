@@ -29,3 +29,16 @@ document.getElementById("show-hide").addEventListener("click", function() {
         }
 })
 */
+
+document.getElementsByClassName("show-hide-replies").onclick = function() {replyFunction()};
+
+function replyFunction() {
+
+        test = document.getElementById('replies-section-{{ loop.index }}');
+  
+  if(this.style.display == 'none'){
+      this.style.display = 'block'
+  }else{
+     this.style.display = 'none'
+  }
+    }

@@ -19,7 +19,7 @@ h1 {
     border-radius: 10px; 
 }
 
-#offer_or_request, #locations_start_name, #locations_end_name, #journey_details, #datepicker, #submit-button, #reply, #reply-button, #edit-button, #delete-button {
+#offer_or_request, #locations_start_name, #locations_end_name, #journey_details, #datepicker, #submit-button, #reply-button, #edit-button, #delete-button {
     border-radius: 10px; 
 }
 
@@ -140,8 +140,8 @@ textarea {
     margin-bottom: 10px;
 }
 
-#reply {
-    margin-top: 14px;
+#replies-section- {
+    display: none;
 }
 
 #myBtn {
