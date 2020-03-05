@@ -25,6 +25,21 @@ The whole process should be very simple and straightforward - in essence, it cou
 
 ### User Stories
 
+* I make the same journey from Kenmare to Killarney every day. Some days I could do with some company on the drive, some days I could do with not driving at all. Can I find someone else who does the same journey around the same time?
+
+![alt text](https://i.imgur.com/iLy9U3h.jpg "Kingdom Come screenshot")
+* I need to get to Cork Airport, I wonder if there's anyone who is already driving to Cork on the same day as my flight?
+
+![alt text](https://i.imgur.com/D56Tugb.jpg "Kingdom Come screenshot")
+* I drive around the area quite a lot, maybe there are people asking for lifts to the same places as me on the same days?
+
+![alt text](https://i.imgur.com/GGjyC6j.jpg "Kingdom Come screenshot")
+
+I used Balsamiq to create some wireframes for the project. 
+
+![alt text](https://i.imgur.com/6Ro7Wcy.jpg "Kingdom Come wireframe")
+![alt text](https://i.imgur.com/SEltWEW.jpg "Kingdom Come wireframe")
+
 ## Features
 
 ### Existing features
@@ -32,6 +47,9 @@ The whole process should be very simple and straightforward - in essence, it cou
 ### Features left to implement
 
 ## Technologies
+
+This project uses HTML, CSS, JavaScript, jQuery, Python/Flask and MongoDB.
+It utilises the Bootstrap framework and library, plus a [datepicker from GIJGO](https://gijgo.com/datepicker) and Font Awesome for icons.
 
 ## Testing
 
@@ -41,9 +59,8 @@ The whole process should be very simple and straightforward - in essence, it cou
 
 ### Content
 
-### Media
-
-The single background image on this site was sourced from a Google image search.
+* The datepicker was sourced from https://gijgo.com/datepicker/example/bootstrap-4.
+* For scrolling to the top with a 'back to top' button, I referred to https://www.w3schools.com/howto/howto_js_scroll_to_top.asp.
 
 ### Acknowledgements
 
