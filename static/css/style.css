@@ -1,9 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand:400,700&display=swap');
 
 body {
-    background: url("../images/kenmare.jpg") no-repeat center center fixed;
-    background-size: cover;
-    height: 100vh;
+    background-color: lightblue;
+    background-size: cover;    
     font-family: 'Quicksand', sans-serif;
 }
 
@@ -103,6 +102,10 @@ textarea {
     padding-bottom: 15px;
 }
 
+.card-body-replies {
+    display: none;
+}
+
 .lift-details {
     margin-right: 10px;
 }
@@ -138,10 +141,6 @@ textarea {
 
 .details {
     margin-bottom: 10px;
-}
-
-#replies-section- {
-    display: none;
 }
 
 #myBtn {
