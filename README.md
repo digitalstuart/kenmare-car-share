@@ -1,5 +1,7 @@
 # Kenmare Car Share
 
+![alt text](https://i.imgur.com/VDbJ15b.jpg "Kenmare Car Share as seen on different devices")
+
 Being a local Kenmare resident, I asked a question on a local Facebook group about any websites that people might find helpful in the community. A 'carpooling' site was one of the ideas given and so I have begun work on Kenmare Car Share.
 
 The aim of the project at the moment is to have the minimum necessary functionality for it to be a live website that people could actually use and gain benefit from. It also needs to meet the requirements of CRUD - create, read, update and delete.
@@ -44,6 +46,10 @@ The prospect of a 'Browse lifts' page has been moved back to 'Features left to i
 ## Features
 
 ### Existing features
+
+* The navbar and dropdown burger menu have options to 'Offer/request a lift' and also one for 'Contact', which is a simple href link for opening up a user's messaging client with the 'send to' email address field pre-populated.
+* The landing page uses Bootstrap card deck functionality to display the 'latest lifts' ordered by most recent. A limit can be applied to the number of cards shown, which was set to 6 at the time of writing.
+* 
 
 ### Features left to implement
 
