@@ -102,7 +102,7 @@ textarea {
     padding-bottom: 15px;
 }
 
-.card-body-replies {
+.card-body-replies, .card-body-details {
     display: none;
     padding-left: 20px;
 }

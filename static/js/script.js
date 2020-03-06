@@ -38,4 +38,25 @@ function replyFunction(id) {
   } else {
     replySection.style.display = 'none';
   }
+
+  /* let thisClick = document.getElementsByClassName('replies-show-hide')
+
+  if (!replySection.style.display || replySection.style.display == 'none') {
+    thisClick.innerHTML = '<strong>Show/hide replies <i class="fas fa-caret-up"></i></strong>';
+  } else {
+    thisClick.innerHTML = '<strong>Show/hide replies <i class="fas fa-caret-down"></i></strong>';
+  }
+
+  */
+
+}
+
+function detailsFunction(id) {
+  let detailsSection = document.getElementById('details-for-' + id);
+  
+  if (!detailsSection.style.display || detailsSection.style.display == 'none') {
+    detailsSection.style.display = 'block';
+  } else {
+    detailsSection.style.display = 'none';
+  }
 }
