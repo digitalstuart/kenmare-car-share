@@ -26,7 +26,7 @@
 					</div>
 					<div class="card-body-details" id="details-for-{{ loop.index }}">
 
-						<div>
+						<div class="journey-details">
 							{{lift.journey_details}}
 
 						</div>
@@ -47,7 +47,7 @@
 				<div class="card-body-replies" id="replies-for-{{ loop.index }}">
 					{% for comment in lift.comments %}
 					<div>
-						<strong>Posted at </strong>{{comment.posted}}<br>{{comment.text}}
+						<span><p class="reply-details"><strong>Posted at </strong>{{comment.posted}}<br>{{comment.text}}</p></span>
 						<hr>
 					</div>
 					{% endfor %}

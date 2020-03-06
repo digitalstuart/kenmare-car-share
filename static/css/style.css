@@ -105,6 +105,7 @@ textarea {
 .card-body-replies {
     display: none;
     padding-left: 20px;
+    padding-right: 20px;
 }
 
 .card-body-details {
@@ -118,6 +119,10 @@ textarea {
 
 .lift-details {
     margin-right: 10px;
+}
+
+.journey-details, .reply-details {
+    padding-right: 20px;
 }
 
 .replies {
