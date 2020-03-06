@@ -41,23 +41,7 @@ def reply_to(lift_id):
                            whereTo = locations, whereFrom = whereFrom)
 
 @app.route('/add_reply/<lift_id>', methods=['POST'])
-def add_reply(lift_id):
-    # lifts = mongo.db.lifts
-    # lifts.update( {'_id': ObjectId(lift_id)},
-    # {   'offer_or_request':request.form.get('offer_or_request'),
-    #     'locations_start_name':request.form.get('locations_start_name'),
-    #     'locations_end_name': request.form.get('locations_end_name'),
-    #     'journey_details': request.form.get('journey_details'),
-    #     'date_of_travel': request.form.get('date_of_travel')        
-    # })
-    # liftid = mongo.db.lifts.find_one({"_id": ObjectId(lift_id)})["_id"]
-    # comments = mongo.db.comments
-    # submit = {
-    #    'posted': datetime.now().strftime("%d/%m/%y"),
-    #    'text': request.form.get('text'),
-    #    'discussion_id': liftid
-    # }
-    # comments.insert_one(submit)
+def add_reply(lift_id):    
     mongo.db.lifts.find_one_and_update({"_id": ObjectId(lift_id)}, 
     {'$push': {"comments": {
                 "text": request.form.get("text"),
