@@ -81,13 +81,13 @@ textarea {
     margin-bottom: 17px;    
 }
 
-.nav-text, .fa-car-alt {
+.nav-text, .fa-car-alt, .fa-envelope {
     color: black;
     padding-top: 10px;
     margin-right: 5px;
 }
 
-.fa-car-alt {
+.fa-car-alt, .fa-envelope {
     padding-left: 20px;
     margin-bottom: 5px;
 }
@@ -104,6 +104,11 @@ textarea {
 
 .card-body-replies {
     display: none;
+    padding-left: 20px;
+}
+
+.replies-show-hide:hover {
+    cursor: pointer;
 }
 
 .lift-details {
@@ -112,6 +117,7 @@ textarea {
 
 .replies {
     padding-left: 20px;
+    padding-bottom: 15px;
 }
 
 .form-group {    
@@ -183,7 +189,7 @@ h1 {
 
 @media only screen and (max-width: 768px) {
 
-.fa-car-alt {
+.fa-car-alt, .fa-envelope {
     padding-left: 0px;
 }
 
