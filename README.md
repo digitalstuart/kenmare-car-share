@@ -52,7 +52,7 @@ The prospect of a 'Browse lifts' page has been moved back to 'Features left to i
 * On the individual lift cards:
     * Different icons are used for either 'request a lift' or 'offer a lift'.
     * Each listing also contains a date of travel, start and finish locations, some journey details, options to reply/edit/delete and an expandable/collapsible area to show/hide replies.
-    * Because authorisation was not compulsory for this project, the edit/delete functions of the CRUD requirements are universal and can currently be seen/activated by all users. This is addressed in the 'Features left to implement' section of this document.
+    * Because authentication was not compulsory for this project, the edit/delete functions of the CRUD requirements are universal and can currently be seen/activated by all users. This is addressed in the 'Features left to implement' section of this document.
     * Any replies to lift posts are formatted with a date and timestamp; they appear in chronological order from first down to most recent.
 * The main page also features a 'back to top' button which is activated upon a defined window scroll point. When clicked it returns the user to the top of the page. This is primarily a helpful piece of functionality for mobile users.
 * The menu option 'Offer/request a lift' takes the user to a page for adding a lift, which has a form containing:
@@ -78,6 +78,7 @@ The prospect of a 'Browse lifts' page has been moved back to 'Features left to i
 * Selecting 'Delete' from a lift post completely removes the listing.
 
 NB: the datepicker currently returns lift posts with a date format of MM/DD/YY, whereas the automated date and timestamp returns DD/MM/YY. This is a known issue and will be addressed in the future.
+NB: editing a lift which has had replies posted on it has a known bug whereby the replies are deleted. As and when authentication has been implemented for the site, only the original user will be able to edit/delete their own posts. If this 'deleted replies' bug still remains at this time, the registered user will be advised to not to edit the original listing but to post any amendments in the form of another reply.
 
 ### Features left to implement
 
