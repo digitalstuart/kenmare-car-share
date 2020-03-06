@@ -30,13 +30,15 @@ document.getElementById("show-hide").addEventListener("click", function() {
 })
 */
 
-function replyFunction(id) {
-  let replySection = document.getElementById('replies-for-' + id);
+function replyFunction(childElement, id) {
+  let replySection = document.getElementById("replies-for-" + id);
   
   if (!replySection.style.display || replySection.style.display == 'none') {
     replySection.style.display = 'block';
+    childElement.innerHTML = '<strong>Show/hide replies <i class="fas fa-caret-up"></i></strong>';
   } else {
     replySection.style.display = 'none';
+    childElement.innerHTML = '<strong>Show/hide replies <i class="fas fa-caret-down"></i></strong>';
   }
 
   /* let thisClick = document.getElementsByClassName('replies-show-hide')
@@ -51,12 +53,14 @@ function replyFunction(id) {
 
 }
 
-function detailsFunction(id) {
-  let detailsSection = document.getElementById('details-for-' + id);
+function detailsFunction(childElement, id) {
+  let detailsSection = document.getElementById("details-for-" + id);
   
   if (!detailsSection.style.display || detailsSection.style.display == 'none') {
     detailsSection.style.display = 'block';
+    childElement.innerHTML = '<strong>Show journey details <i class="fas fa-caret-up"></i></strong>';
   } else {
     detailsSection.style.display = 'none';
+    childElement.innerHTML = '<strong>Show journey details <i class="fas fa-caret-down"></i></strong>';
   }
 }

@@ -20,7 +20,7 @@
 					<hr>
 
 					<div class="details">
-						<span class="details-show-hide" onclick="detailsFunction({{ loop.index }})">
+						<span class="details-show-hide" onclick="detailsFunction(this.children[0], {{ loop.index }})">
                         <strong>Show journey details <i class="fas fa-caret-down"></i></strong>
                     </span>
 					</div>
@@ -40,7 +40,7 @@
 					<button id="delete-button" ><a href="{{url_for('delete_lift', lift_id=lift._id)}}">Delete</a></button>
 				</div>
 				<div class="replies">
-					<span class="replies-show-hide" onclick="replyFunction({{ loop.index }})">
+					<span class="replies-show-hide" onclick="replyFunction(this.children[0], {{ loop.index }})">
                         <strong>Show/hide replies <i class="fas fa-caret-down"></i></strong>
                     </span>
 				</div>

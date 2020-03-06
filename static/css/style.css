@@ -102,12 +102,17 @@ textarea {
     padding-bottom: 15px;
 }
 
-.card-body-replies, .card-body-details {
+.card-body-replies {
     display: none;
     padding-left: 20px;
 }
 
-.replies-show-hide:hover {
+.card-body-details {
+    display: none;
+    padding-bottom: 15px;
+}
+
+.replies-show-hide:hover, .details-show-hide:hover {
     cursor: pointer;
 }
 
@@ -146,7 +151,7 @@ textarea {
 }
 
 .details {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 #myBtn {
