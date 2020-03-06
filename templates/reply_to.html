@@ -2,55 +2,45 @@
 {% block content %}
 <h1 class="text-center page-headings">REPLY TO A LIFT</h1>
 <form action="{{ url_for('add_reply', lift_id=lift._id) }}" method="POST">
-    <select name="offer_or_request" id="offer_or_request" class="form-control">
-            <option disabled selected>Offer or request?</option>            
-                {% if liftDetails.offer_or_request == lift.offer_or_request %}
-            <option disabled value="{{lift.offer_or_request}}" selected >{{lift.offer_or_request}}</option>
-                {% endif %}
+	<select name="offer_or_request" id="offer_or_request" class="form-control">
+        <option disabled selected>Offer or request?</option>            
+        {% if liftDetails.offer_or_request == lift.offer_or_request %}
+        <option disabled value="{{lift.offer_or_request}}" selected >{{lift.offer_or_request}}</option>
+        {% endif %}
     </select>
 	<select name="locations_start_name" id="locations_start_name" class="form-control">
-            <option value="" disabled selected>Where from?</option>
-            {% for location in whereTo %}
-                {% if location.locations_name == lift.locations_start_name %}
-            <option disabled value="{{location.locations_name}}" selected >{{location.locations_name}}</option>
-                {% else %}
-            <option disabled value="{{location.locations_name}}">{{location.locations_name}}</option>
-                {% endif %}
-            {% endfor %}
+        <option value="" disabled selected>Where from?</option>
+        {% for location in whereTo %}
+            {% if location.locations_name == lift.locations_start_name %}
+                <option disabled value="{{location.locations_name}}" selected >{{location.locations_name}}</option>
+            {% else %}
+                <option disabled value="{{location.locations_name}}">{{location.locations_name}}</option>
+            {% endif %}
+        {% endfor %}
     </select>
-		
-    <select name="locations_end_name" id="locations_end_name" class="form-control">
-            <option value="" disabled selected>Where to?</option>
-            {% for location in whereFrom %}
-                {% if location.locations_name == lift.locations_end_name %}
-            <option disabled value="{{location.locations_name}}" selected >{{location.locations_name}}</option>
-                {% else %}
-            <option disabled value="{{location.locations_name}}" >{{location.locations_name}}</option>
-                {% endif %}
-            {% endfor %}
+	<select name="locations_end_name" id="locations_end_name" class="form-control">
+        <option value="" disabled selected>Where to?</option>
+        {% for location in whereFrom %}
+            {% if location.locations_name == lift.locations_end_name %}
+                <option disabled value="{{location.locations_name}}" selected >{{location.locations_name}}</option>
+            {% else %}
+                <option disabled value="{{location.locations_name}}" >{{location.locations_name}}</option>
+            {% endif %}
+        {% endfor %}
     </select>
-
-    <textarea disabled name="journey_details" id="journey_details" cols="30" rows="5">{{lift.journey_details}}</textarea>    
-    
-    <input disabled name="date_of_travel" id="datepicker" width="270"/>
-	
-    <textarea maxlength="150" placeholder="Please enter your reply here (maximum 150 characters)" name="text" id="text" cols="30" rows="5" required></textarea>
-	
-	<button type="submit" id="submit-button" class="btn btn-primary"><span class="submit-text">Submit >></span></button>
-
+	<textarea disabled name="journey_details" id="journey_details" cols="30" rows="5">{{lift.journey_details}}</textarea>
+	<input disabled name="date_of_travel" id="datepicker" width="270"/>
+	<textarea maxlength="150" placeholder="Please enter your reply here (maximum 150 characters)" name="text" id="text" cols="30" rows="5" required></textarea>
+	<button type="submit" id="submit-button" class="btn btn-primary">
+        <span class="submit-text">Submit >></span>
+    </button>
 </form>
-
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-	</script>
+	integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+</script>
 <script>
-    
-    $( document ).ready(function() {     
-
+	$(document).ready(function() {
         $("#datepicker").val('{{lift.date_of_travel}}');
-
-        });
-        
-</script>  
-
+        });        
+</script>
 {% endblock %}
