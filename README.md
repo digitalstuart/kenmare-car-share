@@ -6,7 +6,7 @@ Being a local Kenmare resident, I asked a question on a local Facebook group abo
 
 The aim of the project at the moment is to have the minimum necessary functionality for it to be a live website that people could actually use and gain benefit from. It also needs to meet the requirements of CRUD - create, read, update and delete.
 
-It is hoped that residents from in and around Kenmare will come to see it as a resource for reducing the number of duplicate vehicle journeys being made, raising environmental awareness and fostering communmity spirit.
+It is hoped that residents from in and around Kenmare will come to see it as a resource for reducing the number of duplicate vehicle journeys being made, raising environmental awareness and fostering community spirit.
 
 There are many prospects for progressive enhancement of the website in the future, which are outlined later in this document.
 
@@ -77,8 +77,10 @@ The prospect of a 'Browse lifts' page has been moved back to 'Features left to i
 * All these fields can be edited; then, upon clicking submit, the user is redirected to the main 'Latest lifts' page where they can see their edits have taken effect and been published.
 * Selecting 'Delete' from a lift post completely removes the listing.
 
-NB: the datepicker currently returns lift posts with a date format of MM/DD/YY, whereas the automated date and timestamp returns DD/MM/YY. This is a known issue and will be addressed in the future.
-NB: editing a lift which has had replies posted on it has a known bug whereby the replies are deleted. As and when authentication has been implemented for the site, only the original user will be able to edit/delete their own posts. If this 'deleted replies' bug still remains at this time, the registered user will be advised to not to edit the original listing but to post any amendments in the form of another reply.
+### Notes
+
+* The datepicker currently returns lift posts with a date format of MM/DD/YY, whereas the automated date and timestamp returns DD/MM/YY. This is a known issue and will be addressed in the future.
+* Editing a lift which has had replies posted on it has a known bug whereby the replies are deleted but the 'Posted at' text remains. As and when authentication has been implemented for the site, only the original user will be able to edit/delete their own posts. If this 'deleted replies' bug still remains at this time, the registered user will be advised not to edit the original listing but to post any amendments in the form of another reply.
 
 ### Features left to implement
 
@@ -94,9 +96,67 @@ It utilises the Bootstrap framework and library, plus a [datepicker from GIJGO](
 
 ## Testing
 
+1. Navbar
+    * Clicking on the site logo redirects to the main page.
+    * Clicking on 'Offer/request a lift' redirects correctly to /add-lift.
+    * Clicking on 'Contact' opens the user's default messaging client, with the 'send to' field pre-populated with the correct email address.
+    * In mobile view, the burger icon correctly displays the dropdown menu. The menu links behave in the expected way, as above.
+    
+2. 'Latest lifts' page
+    * The listings appear and update in 'most recently posted' order, with a limit on the number shown as set in line 19 of the app.py file.
+    * Different icons are displayed for 'Request a lift' and 'Offer a lift'.
+    * The 'when', 'from' and 'to' fields are correctly populated as per the entered database information.
+    * 'Show journey details' is expandable/collapsible, with a down or up arrow displayed as appropriate. The correct user-inputted text is shown when the section is opened.
+    * 'Reply' button redirects to a 'reply_to' URL with the relevant document ID.
+    * 'Edit' button redirects to an 'edit_lift' URL with the relevant document ID.
+    * 'Delete' button removes the listing entirely from the site and database.
+    * 'Show/hide replies' is expandable/collapsible, with a down or up arrow displayed as appropriate. The correct user-inputted comments are shown when the section is opened.
+    * The comments are displayed chronologically from first to most recent, with the correct time and date shown.
+    * On mobile view (and other devices when the main page content extends beyond the viewport) a 'back to top' button appears at a defined scroll point. When clicked it returns the user to the top of the page.
+
+3. 'Add a lift' page
+    * Trying to submit the form without completing any of the fields brings up the 'Please select an item in the list' error message. This message is replicated for each incomplete field, until all form requirements have been met and the user can then submit.
+    * The first dropdown has options to 'Offer a lift' or 'Request a lift'.
+    * The 'Where from?' dropdown has a number of locations to choose from.
+    * The 'Where to?' dropdown has the same list of locations to choose from.
+    * The text area contains some placeholder text which is removed when the user starts typing. There is a 150-character limit and the text area cannot be resized by the user. NB: the limit on number of characters can of course be revisited if user feedback suggest a need to do so.
+    * Clicking in the 'Select date of journey' field brings up a datepicker. The relevant date can be correctly selected and inputted into the field.
+    * Clicking 'Submit' takes the user back to the 'Latest lifts' page, where their post has been added to the top of the listings. 
+
+4. 'Reply to a lift' page
+    * The three dropdown menus, text area and datepicker field are all pre-populated with the relevant lift details. These all have editing disabled on them.
+    * The text area contains some placeholder text which is removed when the user starts typing. There is a 150-character limit and the text area cannot be resized by the user.
+    * Clicking 'Submit' takes the user back to the 'Latest lifts' page. If they click the 'Show/hide replies' option, their comment will be displayed with a date and timestamp.
+
+5. 'Edit your lift' page
+    * The three dropdown menus, text area and datepicker field are all pre-populated with the relevant lift details. 
+    * The 'Where from?', 'Where to?', text area and datepicker fields can be amended.
+    * Clicking 'Submit' takes the user back to the 'Latest lifts' page, where the details of the lift have been updated as per the edits made.
+    
+6. 'Delete' button
+    * Clicking the 'Delete' button on any listing immediately removes it from the website and MongoDB database. The user remains on the 'Latest lifts' page, with another older listing coming 'back up' into the view (unless there are no further lifts to display).
+
+I WILL ADD SOME INFORMATION HERE ABOUT DIFFERENT DEVICE/BROWSER TESTING, ANY BUGS FOUND, ANY SUBSEQUENT ACTION TAKEN. PLUS DETAILS ABOUT RUNNING THE CODE THROUGH VALIDATOR TOOLS
+
 ## MongoDB schema
 
+TO BE DONE
+
 ## Deployment
+
+* I created a new app in Heroku called 'kenmare-car-share' with the region selected as 'Europe'.
+* I then ran '$ heroku login' in the Gitpod CLI and followed the instructions for logging into Heroku.
+* I then ran '$ heroku apps' in the CLI to confirm that 'kenmare-car-share' was listed.
+* I then ran '$ heroku git:remote -a kenmare-car-share' in order to set my Heroku app as the remote master branch.
+* I then ran '$ pip3 freeze > requirements.txt' in order for Heroku to know the requirements for running the app.
+* I then ran '$ echo web: python app.py > Procfile', which tells Heroku to refer to my 'app.py' file in order to begin running the application.
+* I then ran 'git add', 'git commit' and 'git push heroku master' to send everything to the remote repository.
+* I then ran '$ heroku ps:scale web=1' to tell Heroku to start running the app.
+* In my Heroku app, I navigated to 'Settings > Reveal Config Vars' - I specified my IP and PORT and MONGO_URI here.
+* I then clicked 'Open app' and my website was deployed live to https://kenmare-car-share.herokuapp.com.
+* I created an 'env.py' file containing my MONGO_URI environment variable, with the variable then used in the corresponsing path in my 'app.py' file. 'Env.py' is also referenced in a '.gitignore' file in order to mask password details.
+* In order to clone this project, you should paste https://github.com/digitalstuart/kenmare-car-share.git into your chosen editor's terminal. Then type 'git remote rm origin' into the terminal to sever the link with the original.
+* You would also need to create your own MONGO_URI variable, env.py and .gitignore file.
 
 ## Credits
 
@@ -107,4 +167,4 @@ It utilises the Bootstrap framework and library, plus a [datepicker from GIJGO](
 
 ### Acknowledgements
 
-Code Institute tutor Tim Nelson was a very wise and patient man as he helped me learn and navigate the worlds of MongoDB, Python, Jinja and Flask. Thanks also to members of the 'Kenmare Community Chat' Facebook page for being the inspiration behind this project! 
+Code Institute tutor Tim Nelson was a very wise and patient man as he helped me learn and navigate the worlds of MongoDB, Python, Jinja and Flask. Likewise, my project mentor Aaron Sinnott was a lifesaver with helping me understand how to get show/hide functionality with Jinja auto-generated elements. Thanks also to members of the 'Kenmare Community Chat' Facebook page for being the inspiration behind this project! 
