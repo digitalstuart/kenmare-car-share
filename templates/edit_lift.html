@@ -8,6 +8,7 @@
         <option value="{{lift.offer_or_request}}" selected >{{lift.offer_or_request}}</option>
             {% endif %}            
     </select>
+    <!-- Edit start location -->
 	<select name="locations_start_name" id="locations_start_name" class="form-control" required>
         <option value="" disabled selected>Where from?</option>
         {% for location in whereTo %}
@@ -18,6 +19,7 @@
             {% endif %}
         {% endfor %}
     </select>
+    <!-- Edit end location -->
 	<select name="locations_end_name" id="locations_end_name" class="form-control" required>
         <option value="" disabled selected>Where to?</option>
         {% for location in whereFrom %}
@@ -28,9 +30,12 @@
             {% endif %}
         {% endfor %}
     </select>
+    <!-- Edit journey details -->
 	<textarea maxlength="150" name="journey_details" id="journey_details" cols="30" rows="5" required>{{lift.journey_details}}</textarea>
-	<input name="date_of_travel" id="datepicker" width="270" autocomplete="off" required/>
-	<button type="submit" id="submit-button" class="btn btn-primary">
+	<!-- Edit date of travel -->
+    <input type="date" name="date_of_travel" id="datepicker" width="270" autocomplete="off" required/>
+	<!-- Submit edited form -->
+    <button type="submit" id="submit-button" class="btn btn-primary">
         <span class="submit-text">Submit >></span>
     </button>
 </form>

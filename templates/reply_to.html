@@ -8,6 +8,7 @@
         <option disabled value="{{lift.offer_or_request}}" selected >{{lift.offer_or_request}}</option>
         {% endif %}
     </select>
+    <!-- Start location disabled -->
 	<select name="locations_start_name" id="locations_start_name" class="form-control">
         <option value="" disabled selected>Where from?</option>
         {% for location in whereTo %}
@@ -18,6 +19,7 @@
             {% endif %}
         {% endfor %}
     </select>
+    <!-- End location disabled -->
 	<select name="locations_end_name" id="locations_end_name" class="form-control">
         <option value="" disabled selected>Where to?</option>
         {% for location in whereFrom %}
@@ -28,10 +30,14 @@
             {% endif %}
         {% endfor %}
     </select>
+    <!-- Journey details disabled -->
 	<textarea disabled name="journey_details" id="journey_details" cols="30" rows="5">{{lift.journey_details}}</textarea>
-	<input disabled name="date_of_travel" id="datepicker" width="270"/>
-	<textarea maxlength="150" placeholder="Please enter your reply here (maximum 150 characters)" name="text" id="text" cols="30" rows="5" required></textarea>
-	<button type="submit" id="submit-button" class="btn btn-primary">
+	<!-- Date of travel disabled -->
+    <input disabled type="date" name="date_of_travel" id="datepicker" width="270"/>
+	<!-- Enter reply -->
+    <textarea maxlength="150" placeholder="Please enter your reply here (maximum 150 characters)" name="text" id="text" cols="30" rows="5" required></textarea>
+	<!-- Submit reply -->
+    <button type="submit" id="submit-button" class="btn btn-primary">
         <span class="submit-text">Submit >></span>
     </button>
 </form>
