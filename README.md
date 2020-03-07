@@ -68,7 +68,7 @@ The prospect of a **Browse lifts** page has been moved back to **Features left t
         * All the above are pre-populated with the relevant details from the original lift post.
     * A text area for entering a reply.
     * Submit button.
-* Upon clicking submit, the user is redirected to the main **Latest lifts** page and they will be able to expand the **show/hide replies** section of the relevant lift to see that their reply has been posted.
+* Upon clicking submit, the user is redirected to the main **Latest lifts** page and they will be able to expand the **Show/hide replies** section of the relevant lift to see that their reply has been posted.
 * Selecting 'Edit' from a lift post on the main page takes the user to a page for editing a lift, which has a form containing:
     * Three dropdown 'select' menus.
     * A text area for adding some brief journey details.
