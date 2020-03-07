@@ -30,9 +30,9 @@
 						<div class="journey-details">{{lift.journey_details}}</div>
 					</div>
                     <!-- Reply, edit and delete buttons -->
-					<button id="reply-button"><a href="{{url_for('reply_to', lift_id=lift._id)}}">Reply</a></button>
-					<button id="edit-button"><a href="{{url_for('edit_lift', lift_id=lift._id)}}">Edit</a></button>
-					<button id="delete-button" ><a href="{{url_for('delete_lift', lift_id=lift._id)}}">Delete</a></button>
+					<button id="reply-button" formaction="{{url_for('reply_to', lift_id=lift._id)}}">Reply</button>
+					<button id="edit-button" formaction="{{url_for('edit_lift', lift_id=lift._id)}}">Edit</button>
+					<button id="delete-button" formaction="{{url_for('delete_lift', lift_id=lift._id)}}">Delete</button>
 				</div>
                 <!-- Show/hide toggle and arrow indicator for replies -->
 				<div class="replies">
@@ -42,11 +42,9 @@
 				</div>
 				<div class="card-body-replies" id="replies-for-{{ loop.index }}">
 					{% for comment in lift.comments %}
-					<div>
-						<span>
-                            <p class="reply-details"><strong>Posted at </strong>{{comment.posted}}<br>{{comment.text}}</p>
-                        </span>
-						<hr>
+					<div>					
+                        <p class="reply-details"><strong>Posted at </strong>{{comment.posted}}<br>{{comment.text}}</p>
+                        <hr>
 					</div>
 					{% endfor %}
 				</div>
@@ -57,6 +55,5 @@
     <!-- Back to top button -->
 	<button id="myBtn" title="Go to top">Back to top<br></button>
 </div>
-<script src="static/js/script.js" type="text/javascript">
-</script>
+<script src="static/js/script.js"></script>
 {% endblock %}
