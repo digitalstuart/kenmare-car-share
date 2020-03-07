@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand:400,700&display=swap');
 
+/* SITE-WIDE */
+
 body {
     background-color: lightblue;
     background-size: cover;    
@@ -14,60 +16,11 @@ h1 {
     margin-bottom: 20px;
 }
 
-.card {
-    border-radius: 10px; 
-}
-
-#offer_or_request, #locations_start_name, #locations_end_name, #journey_details, #datepicker, #submit-button, #reply-button, #edit-button, #delete-button {
-    border-radius: 10px; 
-}
-
-.offer-or-request {
-    font-family: 'Quicksand', sans-serif;
-}
-
-.submit-text {
-    position: relative;
-    top: 1.5px;
-}
-
-a {
-    color: black;    
-}
-
-a:hover {
-    text-decoration: none;
-    color: slategrey;
-}
-
-#submit-button {
-    color: #495057;
-    background-color: white;
-    padding: 0px 12px 5px 12px;
-    border: none;
-}
-
-textarea {
-    color: #495057;
-    outline: none;
-    padding-left: 12px;
-}
-
-#offer_or_request, #locations_start_name, #locations_end_name {    
-    box-shadow: none;
-}
-
-#submit-button:hover {
-    color: black;
-}
-
-.gj-icon {
-    color: #495057;
-}
-
 .text-center {
     margin-top: 20px;
 }
+
+/* NAVBAR */
 
 .navbar {
     padding-right: 4px;
@@ -75,14 +28,6 @@ textarea {
 
 .navbar-toggler {
     border: 0;
-}
-
-.card-deck {
-    margin: 12px;    
-}
-
-.card-text {
-    margin-bottom: 17px;    
 }
 
 .nav-text, .fa-car-alt, .fa-envelope {
@@ -96,13 +41,58 @@ textarea {
     margin-bottom: 5px;
 }
 
+/* CARDS */
+
+.card-deck {
+    margin: 12px;    
+}
+
+.card {
+    border-radius: 10px; 
+}
+
 .fa-car-side, .fa-thumbs-up {
     padding-left: 20px;
     padding-top: 20px;
 }
 
+.offer-or-request {
+    font-family: 'Quicksand', sans-serif;
+}
+
 .card-body {
     padding-top: 10px;
+    padding-bottom: 15px;
+}
+
+.details {
+    margin-bottom: 15px;
+}
+
+.details-show-hide:hover, .replies-show-hide:hover {
+    cursor: pointer;
+}
+
+.card-body-details {
+    display: none;
+    padding-bottom: 15px;
+}
+
+.journey-details, .reply-details {
+    padding-right: 20px;
+}
+
+a {
+    color: black;    
+}
+
+a:hover {
+    text-decoration: none;
+    color: slategrey;
+}
+
+.replies {
+    padding-left: 20px;
     padding-bottom: 15px;
 }
 
@@ -112,27 +102,29 @@ textarea {
     padding-right: 20px;
 }
 
-.card-body-details {
-    display: none;
-    padding-bottom: 15px;
+/* Back to top button, with reference to https://www.w3schools.com/howto/howto_js_scroll_to_top.asp */
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 15px;
 }
 
-.replies-show-hide:hover, .details-show-hide:hover {
-    cursor: pointer;
+#myBtn:hover {
+  background-color:slategrey;
 }
 
-.lift-details {
-    margin-right: 10px;
-}
-
-.journey-details, .reply-details {
-    padding-right: 20px;
-}
-
-.replies {
-    padding-left: 20px;
-    padding-bottom: 15px;
-}
+/* ADD, EDIT & REPLY PAGES */
 
 .form-group {    
     margin-bottom: 0;
@@ -144,10 +136,27 @@ textarea {
     margin-bottom: 10px;
 }
 
-textarea {    
-    width: 100%;
+#offer_or_request, #locations_start_name, #locations_end_name, #journey_details, #datepicker, #submit-button, #reply-button, #edit-button, #delete-button {
+    border-radius: 10px; 
+}
+
+#offer_or_request, #locations_start_name, #locations_end_name {    
+    box-shadow: none;
+}
+
+textarea {
+    color: #495057;
+    outline: none;
+    padding-left: 12px;
     padding-bottom: 0;
+    width: 100%;
     resize: none;
+}
+
+/* Sets colour for calendar icon */
+
+.gj-icon {
+    color: #495057;
 }
 
 #text {
@@ -159,28 +168,20 @@ textarea {
     margin-top: 11px;
 }
 
-.details {
-    margin-bottom: 15px;
+#submit-button {
+    color: #495057;
+    background-color: white;
+    padding: 0px 12px 5px 12px;
+    border: none;
 }
 
-#myBtn {
-  display: none; /* Hidden by default */
-  position: fixed; /* Fixed/sticky position */
-  bottom: 20px; /* Place the button at the bottom of the page */
-  right: 20px; /* Place the button 30px from the right */
-  z-index: 99; /* Make sure it does not overlap */
-  border: none; /* Remove borders */
-  outline: none; /* Remove outline */
-  background-color: black; /* Set a background color */
-  color: white; /* Text color */
-  cursor: pointer; /* Add a mouse pointer on hover */
-  padding: 10px; /* Some padding */
-  border-radius: 10px; /* Rounded corners */
-  font-size: 15px; /* Increase font size */
+#submit-button:hover {
+    color: black;
 }
 
-#myBtn:hover {
-  background-color:slategrey; /* Add a dark-grey background on hover */
+.submit-text {
+    position: relative;
+    top: 1.5px;
 }
 
 /* MEDIA QUERIES */
