@@ -13,11 +13,19 @@ app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 
 mongo = PyMongo(app)
 
+"""
+Main page route; lifts sorted by most recent and limit on number shown
+"""
+
 @app.route('/')
 @app.route('/lifts')
 def lifts(): 
     lifts = mongo.db.lifts.find().sort('_id', -1).limit(6)
     return render_template("lifts.html", lifts = lifts)
+
+"""
+New lifts can be added; dropdown menus populated with pre-defined text
+"""
 
 @app.route('/add_lift')
 def add_lift():
@@ -25,11 +33,19 @@ def add_lift():
     whereFrom = mongo.db.locations.find()
     return render_template("add_lift.html", whereTo = locations, whereFrom = whereFrom)
 
+"""
+New lift details inserted into database; redirects to main page 
+"""
+
 @app.route('/list_lift', methods=['POST'])
 def list_lift():
     lifts = mongo.db.lifts
     lifts.insert_one(request.form.to_dict())
     return redirect(url_for('lifts'))
+
+"""
+Route for reply form; fields populated with original lift details
+"""
 
 @app.route('/reply_to/<lift_id>')
 def reply_to(lift_id):
@@ -40,14 +56,23 @@ def reply_to(lift_id):
     return render_template("reply_to.html", lift=the_lift, liftDetails=lifts,
                            whereTo = locations, whereFrom = whereFrom)
 
+"""
+Reply added to existing database document in an array
+"""
+
 @app.route('/add_reply/<lift_id>', methods=['POST'])
 def add_reply(lift_id):    
     mongo.db.lifts.find_one_and_update({"_id": ObjectId(lift_id)}, 
     {'$push': {"comments": {
                 "text": request.form.get("text"),
                 "posted": datetime.now().strftime("%H:%M on %d/%m/%y")
-    }}})
+    }}
+    })
     return redirect(url_for('lifts')) 
+
+"""
+Route for edit form; fields populated with original lift details
+"""
 
 @app.route('/edit_lift/<lift_id>')
 def edit_lift(lift_id):
@@ -57,6 +82,10 @@ def edit_lift(lift_id):
     whereFrom = mongo.db.locations.find()
     return render_template("edit_lift.html", lift=the_lift, liftDetails=lifts,
                            whereTo = locations, whereFrom = whereFrom)
+
+"""
+Edits are sent to database
+"""
 
 @app.route('/add_edit/<lift_id>', methods=['POST'])
 def add_edit(lift_id):
@@ -74,6 +103,10 @@ def add_edit(lift_id):
     })
     return redirect(url_for('lifts'))
 
+"""
+Route for deleting a document from database
+"""
+
 @app.route('/delete_lift/<lift_id>')
 def delete_lift(lift_id):
     mongo.db.lifts.remove({'_id': ObjectId(lift_id)})
@@ -82,4 +115,4 @@ def delete_lift(lift_id):
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
         port=int(os.environ.get('PORT')),
-        debug=True)
+        debug=False)
