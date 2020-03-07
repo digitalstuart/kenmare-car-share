@@ -138,11 +138,23 @@ It utilises the Bootstrap framework and library, plus a [datepicker from GIJGO](
 6. 'Delete' button
     * Clicking the 'Delete' button on any listing immediately removes it from the website and MongoDB database. The user remains on the **Latest lifts** page, with another older listing coming 'back up' into the view (unless there are no further lifts to display).
 
-I WILL ADD SOME INFORMATION HERE ABOUT DIFFERENT DEVICE/BROWSER TESTING, ANY BUGS FOUND, ANY SUBSEQUENT ACTION TAKEN. PLUS DETAILS ABOUT RUNNING THE CODE THROUGH VALIDATOR TOOLS
+The site was manually viewed and tested in the Chrome and Firefox browsers on a Windows 10 laptop, as well on iOS and Android mobile/tablet devices.
+
+This was done with a view to ensuring that: all functions and interactivity respond appropriately on both mobile and desktop; responsive changes in the navbar and site layout are all present and correct for different devices; and the site remains fully functional, useable and well presented across all screen sizes.
+
+I also ran my code through the W3C validator tools for HTML/CSS, as well as JSHint for Javascript and http://pep8online.com for Python. The PEP8 checker contained a few errors of "closing bracket does not match visual indentation" which I was unable to resolve; I opted to live with these as my code was nonetheless performing fine.
 
 ## MongoDB schema
 
-TO BE DONE
+My database has two collections - lifts and locations.
+
+**Lifts** contains all the keys and values which are mapped over to the listings on the main page of the site, including a 'comments' array containing a number of objects as per the number of replies submitted on a lift posting on the site.
+
+![alt text](https://i.imgur.com/mRi0ztE.jpg "MongoDB database screenshot")
+
+**Locations** includes a number of documents each containing a single location name as a string.
+
+![alt text](https://i.imgur.com/myQRDjb.jpg "MongoDB database screenshot")
 
 ## Deployment
 
