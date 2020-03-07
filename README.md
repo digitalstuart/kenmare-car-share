@@ -12,13 +12,13 @@ There are many prospects for progressive enhancement of the website in the futur
 
 ## UX
 
-The website should do 'exactly what it says on the tin'. The main 'Latest Lifts' page will display the most recently posted lift requests or offers, including: the date of the journey; start and finish locations; some further journey details; and the ability to reply, edit or delete (see footnote *1).
+The website should do 'exactly what it says on the tin'. The main **Latest Lifts** page will display the most recently posted lift requests or offers, including: the date of the journey; start and finish locations; some further journey details; and the ability to reply, edit or delete.
 
 The ability to reply should be very straightforward for users. Click on one button and they are taken to a form containing all the original details of the lift posting, plus a field for entering their reply. Click 'submit' and they go straight back to the main page, where they can see their reply has been added to the listing. 
 
-Likewise, the same simplicity of functionality should apply to adding and editing a listing. The 'Add a Lift' form will have text area, dropdown and select fields, each with some clear explanatory text indicating their purpose. A 'datepicker' is included for added ease of use.
+Likewise, the same simplicity of functionality should apply to adding and editing a listing. The **Add a Lift** form will have text area, dropdown and select fields, each with some clear explanatory text indicating their purpose. A 'datepicker' is included for added ease of use.
 
-A specific list of 'where from' and 'where to' locations have been pre-defined for the introduction of the website.
+A specific list of **Where from?** and **Where to?** locations have been pre-defined for the introduction of the website.
 
 The whole process should be very simple and straightforward - in essence, it could take just three user interactions with the site for a 'car share' to be arranged.
 * User adds new lift offer or request
@@ -38,7 +38,7 @@ The whole process should be very simple and straightforward - in essence, it cou
 ![alt text](https://i.imgur.com/gumjUKv.jpg "Kenmare Car share screenshot")
 
 I used Balsamiq to create some wireframes for the project. They illustrate that the project idea was clear from the outset and the development and final product have been consistent with the concept. 
-The prospect of a 'Browse lifts' page has been moved back to 'Features left to implement'.
+The prospect of a **Browse lifts** page has been moved back to **Features left to implement**.
 
 ![alt text](https://i.imgur.com/OYisCQ2.jpg "Kenmare Car Share wireframe")
 ![alt text](https://i.imgur.com/3vowRyk.jpg "Kenmare Car Share wireframe")
@@ -47,20 +47,20 @@ The prospect of a 'Browse lifts' page has been moved back to 'Features left to i
 
 ### Existing features
 
-* The navbar and dropdown burger menu have options to 'Offer/request a lift' and also one for 'Contact', which is a simple href link for opening up a user's messaging client with the 'send to' email address field pre-populated.
-* The landing page uses Bootstrap card deck functionality to display the 'latest lifts' ordered by most recent. A limit can be applied to the number of cards shown, which was set to 6 at the time of writing.
+* The navbar and dropdown burger menu have options to **Offer/request a lift** and also one for **Contact**, which is a simple href link for opening up a user's messaging client with the 'send to' email address field pre-populated.
+* The landing page uses Bootstrap card deck functionality to display the latest lifts ordered by most recent. A limit can be applied to the number of cards shown, which was set to 6 at the time of writing.
 * On the individual lift cards:
     * Different icons are used for either 'request a lift' or 'offer a lift'.
     * Each listing also contains a date of travel, start and finish locations, some journey details, options to reply/edit/delete and an expandable/collapsible area to show/hide replies.
-    * Because authentication was not compulsory for this project, the edit/delete functions of the CRUD requirements are universal and can currently be seen/activated by all users. This is addressed in the 'Features left to implement' section of this document.
+    * Because authentication was not compulsory for this project, the edit/delete functions of the CRUD requirements are universal and can currently be seen/activated by all users. This is addressed in the **Features left to implement** section of this document.
     * Any replies to lift posts are formatted with a date and timestamp; they appear in chronological order from first down to most recent.
-* The main page also features a 'back to top' button which is activated upon a defined window scroll point. When clicked it returns the user to the top of the page. This is primarily a helpful piece of functionality for mobile users.
-* The menu option 'Offer/request a lift' takes the user to a page for adding a lift, which has a form containing:
+* The main page also features a **Back to top** button which is activated upon a defined window scroll point. When clicked it returns the user to the top of the page. This is primarily a helpful piece of functionality for mobile users.
+* The menu option **Offer/request a lift** takes the user to a page for adding a lift, which has a form containing:
     * Three dropdown 'select' menus.
     * A text area for adding some brief journey details.
     * A datepicker.
     * Submit button.
-* Upon clicking submit, the user is redirected to the main 'Latest lifts' page and their listing will be automatically added at the top as the most recent.
+* Upon clicking submit, the user is redirected to the main **Latest lifts** page and their listing will be automatically added at the top as the most recent.
 * Selecting 'Reply' from a lift post on the main page takes the user to a page for adding a reply, which has a form containing:
     * Three disabled dropdown menus.
     * A disabled text area.
@@ -68,24 +68,26 @@ The prospect of a 'Browse lifts' page has been moved back to 'Features left to i
         * All the above are pre-populated with the relevant details from the original lift post.
     * A text area for entering a reply.
     * Submit button.
-* Upon clicking submit, the user is redirected to the main 'Latest lifts' page and they will be able to expand the 'show/hide replies' section of the relevant lift to see that their reply has been posted.
+* Upon clicking submit, the user is redirected to the main **Latest lifts** page and they will be able to expand the **show/hide replies** section of the relevant lift to see that their reply has been posted.
 * Selecting 'Edit' from a lift post on the main page takes the user to a page for editing a lift, which has a form containing:
     * Three dropdown 'select' menus.
     * A text area for adding some brief journey details.
     * A datepicker.
     * Submit button.
-* All these fields can be edited; then, upon clicking submit, the user is redirected to the main 'Latest lifts' page where they can see their edits have taken effect and been published.
+* All these fields can be edited; then, upon clicking submit, the user is redirected to the main **Latest lifts** page where they can see their edits have taken effect and been published.
 * Selecting 'Delete' from a lift post completely removes the listing.
 
 ### Notes
 
 * The datepicker currently returns lift posts with a date format of MM/DD/YY, whereas the automated date and timestamp returns DD/MM/YY. This is a known issue and will be addressed in the future.
-* Editing a lift which has had replies posted on it has a known bug whereby the replies are deleted but the 'Posted at' text remains. As and when authentication has been implemented for the site, only the original user will be able to edit/delete their own posts. If this 'deleted replies' bug still remains at this time, the registered user will be advised not to edit the original listing but to post any amendments in the form of another reply.
+* Editing a lift which has had replies posted on it has a known bug whereby the replies are deleted but the **Posted at** text remains. As and when authentication has been implemented for the site, only the original user will be able to edit/delete their own posts. If this 'deleted replies' bug still remains at this time, the registered user will be advised not to edit the original listing but to post any amendments in the form of another reply.
 
 ### Features left to implement
 
+* 'Sort by' checkboxes for the main page, e.g. **show only offers**, **show only requests**, **show all lifts**.
+* When a location is selected in the **Where from?** dropdown, it should then either be removed or disabled as an option in the **Where to?** menu.
 * The site could have a mapping element, whereby documents in the MongoDB locations collection are given latitude and longitude values, allowing chosen locations for a lift to be pinned on a map using the Google Maps API.
-* A 'browse lifts' page could contain all active lift postings, with search filters to narrow the results down by location or date of travel, for example.
+* A **Browse lifts** page could contain all active lift postings, with search filters to narrow the results down by location or date of travel, for example.
 * An authentication system for registered users should be set up, so that: 1) only the person who added a lift can edit or delete it, and: 2) for added security and peace of mind for users.
 * This system could also be extended to send notifications to registered users when a reply is left on their post.
 
@@ -98,43 +100,43 @@ It utilises the Bootstrap framework and library, plus a [datepicker from GIJGO](
 
 1. Navbar
     * Clicking on the site logo redirects to the main page.
-    * Clicking on 'Offer/request a lift' redirects correctly to /add-lift.
-    * Clicking on 'Contact' opens the user's default messaging client, with the 'send to' field pre-populated with the correct email address.
+    * Clicking on **Offer/request a lift** redirects correctly to /add-lift.
+    * Clicking on **Contact** opens the user's default messaging client, with the 'send to' field pre-populated with the correct email address.
     * In mobile view, the burger icon correctly displays the dropdown menu. The menu links behave in the expected way, as above.
     
-2. 'Latest lifts' page
+2. **Latest lifts** page
     * The listings appear and update in 'most recently posted' order, with a limit on the number shown as set in line 19 of the app.py file.
-    * Different icons are displayed for 'Request a lift' and 'Offer a lift'.
-    * The 'when', 'from' and 'to' fields are correctly populated as per the entered database information.
-    * 'Show journey details' is expandable/collapsible, with a down or up arrow displayed as appropriate. The correct user-inputted text is shown when the section is opened.
-    * 'Reply' button redirects to a 'reply_to' URL with the relevant document ID.
-    * 'Edit' button redirects to an 'edit_lift' URL with the relevant document ID.
+    * Different icons are displayed for **Request a lift** and **Offer a lift**.
+    * The **when**, **from** and **to** fields are correctly populated as per the entered database information.
+    * **Show journey details** is expandable/collapsible, with a down or up arrow displayed as appropriate. The correct user-inputted text is shown when the section is opened.
+    * 'Reply' button redirects to a *reply_to* URL with the relevant document ID.
+    * 'Edit' button redirects to an *edit_lift* URL with the relevant document ID.
     * 'Delete' button removes the listing entirely from the site and database.
-    * 'Show/hide replies' is expandable/collapsible, with a down or up arrow displayed as appropriate. The correct user-inputted comments are shown when the section is opened.
+    * **Show/hide replies** is expandable/collapsible, with a down or up arrow displayed as appropriate. The correct user-inputted comments are shown when the section is opened.
     * The comments are displayed chronologically from first to most recent, with the correct time and date shown.
-    * On mobile view (and other devices when the main page content extends beyond the viewport) a 'back to top' button appears at a defined scroll point. When clicked it returns the user to the top of the page.
+    * On mobile view (and other devices when the main page content extends beyond the viewport) a **Back to top** button appears at a defined scroll point. When clicked it returns the user to the top of the page.
 
-3. 'Add a lift' page
+3. **Add a lift** page
     * Trying to submit the form without completing any of the fields brings up the 'Please select an item in the list' error message. This message is replicated for each incomplete field, until all form requirements have been met and the user can then submit.
-    * The first dropdown has options to 'Offer a lift' or 'Request a lift'.
-    * The 'Where from?' dropdown has a number of locations to choose from.
-    * The 'Where to?' dropdown has the same list of locations to choose from.
+    * The first dropdown has options to **Offer a lift** or **Request a lift**.
+    * The **Where from?** dropdown has a number of locations to choose from.
+    * The **Where to?** dropdown has the same list of locations to choose from.
     * The text area contains some placeholder text which is removed when the user starts typing. There is a 150-character limit and the text area cannot be resized by the user. NB: the limit on number of characters can of course be revisited if user feedback suggest a need to do so.
-    * Clicking in the 'Select date of journey' field brings up a datepicker. The relevant date can be correctly selected and inputted into the field.
-    * Clicking 'Submit' takes the user back to the 'Latest lifts' page, where their post has been added to the top of the listings. 
+    * Clicking in the **Select date of journey** field, or on the calendar icon, brings up a datepicker. The relevant date can be correctly selected and inputted into the field.
+    * Clicking 'Submit' takes the user back to the **Latest lifts** page, where their post has been added to the top of the listings. 
 
-4. 'Reply to a lift' page
+4. **Reply to a lift** page
     * The three dropdown menus, text area and datepicker field are all pre-populated with the relevant lift details. These all have editing disabled on them.
     * The text area contains some placeholder text which is removed when the user starts typing. There is a 150-character limit and the text area cannot be resized by the user.
-    * Clicking 'Submit' takes the user back to the 'Latest lifts' page. If they click the 'Show/hide replies' option, their comment will be displayed with a date and timestamp.
+    * Clicking 'Submit' takes the user back to the **Latest lifts** page. If they click the **Show/hide replies** option, their comment will be displayed with a date and timestamp.
 
-5. 'Edit your lift' page
+5. **Edit your lift** page
     * The three dropdown menus, text area and datepicker field are all pre-populated with the relevant lift details. 
-    * The 'Where from?', 'Where to?', text area and datepicker fields can be amended.
-    * Clicking 'Submit' takes the user back to the 'Latest lifts' page, where the details of the lift have been updated as per the edits made.
+    * The **Where from?**, **Where to?**, text area and datepicker fields can be amended.
+    * Clicking 'Submit' takes the user back to the **Latest lifts** page, where the details of the lift have been updated as per the edits made.
     
 6. 'Delete' button
-    * Clicking the 'Delete' button on any listing immediately removes it from the website and MongoDB database. The user remains on the 'Latest lifts' page, with another older listing coming 'back up' into the view (unless there are no further lifts to display).
+    * Clicking the 'Delete' button on any listing immediately removes it from the website and MongoDB database. The user remains on the **Latest lifts** page, with another older listing coming 'back up' into the view (unless there are no further lifts to display).
 
 I WILL ADD SOME INFORMATION HERE ABOUT DIFFERENT DEVICE/BROWSER TESTING, ANY BUGS FOUND, ANY SUBSEQUENT ACTION TAKEN. PLUS DETAILS ABOUT RUNNING THE CODE THROUGH VALIDATOR TOOLS
 
@@ -144,18 +146,18 @@ TO BE DONE
 
 ## Deployment
 
-* I created a new app in Heroku called 'kenmare-car-share' with the region selected as 'Europe'.
-* I then ran '$ heroku login' in the Gitpod CLI and followed the instructions for logging into Heroku.
-* I then ran '$ heroku apps' in the CLI to confirm that 'kenmare-car-share' was listed.
-* I then ran '$ heroku git:remote -a kenmare-car-share' in order to set my Heroku app as the remote master branch.
-* I then ran '$ pip3 freeze > requirements.txt' in order for Heroku to know the requirements for running the app.
-* I then ran '$ echo web: python app.py > Procfile', which tells Heroku to refer to my 'app.py' file in order to begin running the application.
-* I then ran 'git add', 'git commit' and 'git push heroku master' to send everything to the remote repository.
-* I then ran '$ heroku ps:scale web=1' to tell Heroku to start running the app.
-* In my Heroku app, I navigated to 'Settings > Reveal Config Vars' - I specified my IP and PORT and MONGO_URI here.
+* I created a new app in Heroku called *kenmare-car-share* with the region selected as 'Europe'.
+* I then ran *heroku login* in the Gitpod CLI and followed the instructions for logging into Heroku.
+* I then ran *heroku apps* in the CLI to confirm that *kenmare-car-share* was listed.
+* I then ran *heroku git:remote -a kenmare-car-share* in order to set my Heroku app as the remote master branch.
+* I then ran *pip3 freeze > requirements.txt* in order for Heroku to know the requirements for running the app.
+* I then ran *echo web: python app.py > Procfile*, which tells Heroku to refer to my 'app.py' file in order to begin running the application.
+* I then ran *git add*, *git commit* and *git push heroku master* to send everything to the remote repository.
+* I then ran *heroku ps:scale web=1* to tell Heroku to start running the app.
+* In my Heroku app, I navigated to *Settings > Reveal Config Vars* - I specified my IP and PORT and MONGO_URI here.
 * I then clicked 'Open app' and my website was deployed live to https://kenmare-car-share.herokuapp.com.
-* I created an 'env.py' file containing my MONGO_URI environment variable, with the variable then used in the corresponsing path in my 'app.py' file. 'Env.py' is also referenced in a '.gitignore' file in order to mask password details.
-* In order to clone this project, you should paste https://github.com/digitalstuart/kenmare-car-share.git into your chosen editor's terminal. Then type 'git remote rm origin' into the terminal to sever the link with the original.
+* I created an *env.py* file containing my MONGO_URI environment variable, with the variable then used in the corresponsing path in my *app.py* file. *Env.py* is also referenced in a *.gitignore* file in order to mask password details.
+* In order to clone this project, you should paste https://github.com/digitalstuart/kenmare-car-share.git into your chosen editor's terminal. Then type *git remote rm origin* into the terminal to sever the link with the original.
 * You would also need to create your own MONGO_URI variable, env.py and .gitignore file.
 
 ## Credits
@@ -163,7 +165,7 @@ TO BE DONE
 ### Content
 
 * The datepicker was sourced from https://gijgo.com/datepicker/example/bootstrap-4.
-* For scrolling to the top with a 'back to top' button, I referred to https://www.w3schools.com/howto/howto_js_scroll_to_top.asp.
+* For scrolling to the top with a **Back to top** button, I referred to https://www.w3schools.com/howto/howto_js_scroll_to_top.asp.
 
 ### Acknowledgements
 
