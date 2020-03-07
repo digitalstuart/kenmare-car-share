@@ -153,10 +153,10 @@ textarea {
     resize: none;
 }
 
-/* Sets colour for calendar icon */
+/* Removes calendar icon of Bootstrap datepicker */
 
-.gj-icon {
-    color: #495057;
+.gj-icon, .btn-outline-secondary {
+    display: none;
 }
 
 #text {
