@@ -69,10 +69,11 @@ Reply added to existing database document in an array
 @app.route('/add_reply/<lift_id>', methods=['POST'])
 def add_reply(lift_id):
     mongo.db.lifts.find_one_and_update({"_id": ObjectId(lift_id)},
-        {'$push': {"comments": {
-        "text": request.form.get("text"),
-        "posted": datetime.now().strftime("%H:%M on %d/%m/%y")
-        }}
+                                       {'$push': {"comments": {
+                                        "text": request.form.get("text"),
+                                        "posted": datetime.now().strftime
+                                        ("%H:%M on %d/%m/%y")
+                                        }}
     })
     return redirect(url_for('lifts'))
 
@@ -99,16 +100,18 @@ Edits are sent to database
 def add_edit(lift_id):
     lifts = mongo.db.lifts
     lifts.update({'_id': ObjectId(lift_id)},
-                {'offer_or_request': request.form.get('offer_or_request'),
-                 'locations_start_name': request.form.get('locations_start_name'),
-                 'locations_end_name': request.form.get('locations_end_name'),
-                 'journey_details': request.form.get('journey_details'),
-                 'date_of_travel': request.form.get('date_of_travel'),
-                 "comments": {
+                 {'offer_or_request': request.form.get('offer_or_request'),
+                  'locations_start_name': request.form.get
+                  ('locations_start_name'),
+                  'locations_end_name': request.form.get('locations_end_name'),
+                  'journey_details': request.form.get('journey_details'),
+                  'date_of_travel': request.form.get('date_of_travel'),
+                  "comments": {
                               "text": request.form.get("text"),
-                              "posted": datetime.now().strftime("%H:%M on %d/%m/%y")
+                              "posted": datetime.now().strftime
+                              ("%H:%M on %d/%m/%y")
                              }
-                }
+                 }
                 )
     return redirect(url_for('lifts'))
 
