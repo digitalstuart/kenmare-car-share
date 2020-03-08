@@ -74,7 +74,7 @@ def add_reply(lift_id):
                                         "posted": datetime.now().strftime
                                         ("%H:%M on %d/%m/%y")
                                         }}
-    })
+                                        })
     return redirect(url_for('lifts'))
 
 """
@@ -110,9 +110,9 @@ def add_edit(lift_id):
                               "text": request.form.get("text"),
                               "posted": datetime.now().strftime
                               ("%H:%M on %d/%m/%y")
-                             }
-                 }
-                )
+                              }
+                  }
+                 )
     return redirect(url_for('lifts'))
 
 """

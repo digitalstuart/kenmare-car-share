@@ -18,7 +18,7 @@ The ability to reply should be very straightforward for users. Click on one butt
 
 Likewise, the same simplicity of functionality should apply to adding and editing a listing. The **Add a Lift** form will have text area, dropdown and select fields, each with some clear explanatory text indicating their purpose. A 'datepicker' is included for added ease of use.
 
-A specific list of **Where from?** and **Where to?** locations have been pre-defined for the introduction of the website.
+A specific list of **Where from?** and **Where to?** locations have been pre-defined for the introductory phase of the website.
 
 The whole process should be very simple and straightforward - in essence, it could take just three user interactions with the site for a 'car share' to be arranged.
 * User adds new lift offer or request
@@ -37,7 +37,7 @@ The whole process should be very simple and straightforward - in essence, it cou
 
 ![alt text](https://i.imgur.com/gumjUKv.jpg "Kenmare Car share screenshot")
 
-I used Balsamiq to create some wireframes for the project. They illustrate that the project idea was clear from the outset and the development and final product have been consistent with the concept. 
+I used Balsamiq to create some wireframes for the project. They illustrate that the idea was clear from the outset and the development and final product have been consistent with the concept. 
 The prospect of a **Browse lifts** page has been moved back to **Features left to implement**.
 
 ![alt text](https://i.imgur.com/OYisCQ2.jpg "Kenmare Car Share wireframe")
@@ -100,12 +100,12 @@ It utilises the Bootstrap framework and library, plus a [datepicker from GIJGO](
 
 1. Navbar
     * Clicking on the site logo redirects to the main page.
-    * Clicking on **Offer/request a lift** redirects correctly to /add-lift.
+    * Clicking on **Offer/request a lift** redirects correctly to */add-lift*.
     * Clicking on **Contact** opens the user's default messaging client, with the 'send to' field pre-populated with the correct email address.
     * In mobile view, the burger icon correctly displays the dropdown menu. The menu links behave in the expected way, as above.
     
 2. **Latest lifts** page
-    * The listings appear and update in 'most recently posted' order, with a limit on the number shown as set in line 19 of the app.py file.
+    * The listings appear and update in 'most recently posted' order, with a limit on the number shown as set in line 24 of the app.py file.
     * Different icons are displayed for **Request a lift** and **Offer a lift**.
     * The **when**, **from** and **to** fields are correctly populated as per the entered database information.
     * **Show journey details** is expandable/collapsible, with a down or up arrow displayed as appropriate. The correct user-inputted text is shown when the section is opened.
@@ -121,8 +121,8 @@ It utilises the Bootstrap framework and library, plus a [datepicker from GIJGO](
     * The first dropdown has options to **Offer a lift** or **Request a lift**.
     * The **Where from?** dropdown has a number of locations to choose from.
     * The **Where to?** dropdown has the same list of locations to choose from.
-    * The text area contains some placeholder text which is removed when the user starts typing. There is a 150-character limit and the text area cannot be resized by the user. NB: the limit on number of characters can of course be revisited if user feedback suggest a need to do so.
-    * Clicking in the **Select date of journey** field, or on the calendar icon, brings up a datepicker. The relevant date can be correctly selected and inputted into the field.
+    * The text area contains some placeholder text which is removed when the user starts typing. There is a 150-character limit and the text area cannot be resized by the user. NB: the limit on number of characters can of course be revisited if user feedback suggests a need to do so.
+    * Clicking in the **Select date of journey** field brings up a datepicker. The relevant date can be correctly selected and inputted into the field.
     * Clicking 'Submit' takes the user back to the **Latest lifts** page, where their post has been added to the top of the listings. 
 
 4. **Reply to a lift** page
@@ -142,7 +142,7 @@ The site was manually viewed and tested in the Chrome and Firefox browsers on a 
 
 This was done with a view to ensuring that: all functions and interactivity respond appropriately on both mobile and desktop; responsive changes in the navbar and site layout are all present and correct for different devices; and the site remains fully functional, useable and well presented across all screen sizes.
 
-I also ran my code through the W3C validator tools for HTML/CSS, as well as JSHint for Javascript and http://pep8online.com for Python. The PEP8 checker contained a few errors of "closing bracket does not match visual indentation" which I was unable to resolve; I opted to live with these as my code was nonetheless performing fine.
+I also ran my code through the W3C validator tools for HTML/CSS, as well as JSHint for Javascript and http://pep8online.com for Python.
 
 ## MongoDB schema
 
