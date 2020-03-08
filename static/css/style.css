@@ -82,13 +82,8 @@ h1 {
     padding-right: 20px;
 }
 
-a {
-    color: black;    
-}
-
-a:hover {
-    text-decoration: none;
-    color: slategrey;
+#reply-button, #edit-button, #delete-button {
+    margin-top: 0;
 }
 
 .replies {
