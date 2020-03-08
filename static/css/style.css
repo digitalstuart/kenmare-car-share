@@ -100,23 +100,23 @@ h1 {
 /* Back to top button, with reference to https://www.w3schools.com/howto/howto_js_scroll_to_top.asp */
 
 #myBtn {
-  display: none;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 99;
-  border: none;
-  outline: none;
-  background-color: black;
-  color: white;
-  cursor: pointer;
-  padding: 10px;
-  border-radius: 10px;
-  font-size: 15px;
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 15px;
 }
 
 #myBtn:hover {
-  background-color:slategrey;
+    background-color:slategrey;
 }
 
 /* ADD, EDIT & REPLY PAGES */

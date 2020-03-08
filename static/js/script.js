@@ -14,7 +14,7 @@ document.getElementById("myBtn").addEventListener ("click", function () {
   document.documentElement.scrollTop = 0;
 });
 
-// Function for show/hide toggle and arrow direction change on replies
+// Function for show/hide toggle and up/down arrow direction change on replies
 
 function replyFunction(childElement, id) {
   let replySection = document.getElementById("replies-for-" + id);
@@ -28,7 +28,7 @@ function replyFunction(childElement, id) {
   }  
 }
 
-// Function for show/hide toggle and arrow direction change on journey details
+// Function for show/hide toggle and up/down arrow direction change on journey details
 
 function detailsFunction(childElement, id) {
   let detailsSection = document.getElementById("details-for-" + id);
