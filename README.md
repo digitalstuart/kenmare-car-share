@@ -1,4 +1,4 @@
-# Kenmare Car Share
+# Kenmare Car Share - visit the site at https://kenmare-car-share.herokuapp.com
 
 ![alt text](https://i.imgur.com/VDbJ15b.jpg "Kenmare Car Share as seen on different devices")
 
